@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="QLBANHANGPIZZAModelStoreContainer" CdmEntityContainer="QLBANHANGPIZZAEntities">
+    <EntitySetMapping Name="ACCOUNTs">
+      <EntityTypeMapping TypeName="QLBANHANGPIZZAModel.ACCOUNT">
+        <MappingFragment StoreEntitySet="ACCOUNT">
+          <ScalarProperty Name="ID_Emp" ColumnName="ID_Emp" />
+          <ScalarProperty Name="ID_User" ColumnName="ID_User" />
+          <ScalarProperty Name="PASS" ColumnName="PASS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BILLs">
+      <EntityTypeMapping TypeName="QLBANHANGPIZZAModel.BILL">
+        <MappingFragment StoreEntitySet="BILL">
+          <ScalarProperty Name="ID_Bill" ColumnName="ID_Bill" />
+          <ScalarProperty Name="ID_Cus" ColumnName="ID_Cus" />
+          <ScalarProperty Name="ID_Emp" ColumnName="ID_Emp" />
+          <ScalarProperty Name="DateFounded" ColumnName="DateFounded" />
+          <ScalarProperty Name="TotalMoney" ColumnName="TotalMoney" />
+          <ScalarProperty Name="BillNotes" ColumnName="BillNotes" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BILLDETAILs">
+      <EntityTypeMapping TypeName="QLBANHANGPIZZAModel.BILLDETAIL">
+        <MappingFragment StoreEntitySet="BILLDETAIL">
+          <ScalarProperty Name="ID_Bill" ColumnName="ID_Bill" />
+          <ScalarProperty Name="ID_Pro" ColumnName="ID_Pro" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+          <ScalarProperty Name="IntoMoney" ColumnName="IntoMoney" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CATEGORIES">
+      <EntityTypeMapping TypeName="QLBANHANGPIZZAModel.CATEGORy">
+        <MappingFragment StoreEntitySet="CATEGORIES">
+          <ScalarProperty Name="ID_CATE" ColumnName="ID_CATE" />
+          <ScalarProperty Name="NAME_CATE" ColumnName="NAME_CATE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CUSTOMERs">
+      <EntityTypeMapping TypeName="QLBANHANGPIZZAModel.CUSTOMER">
+        <MappingFragment StoreEntitySet="CUSTOMER">
+          <ScalarProperty Name="ID_CUS" ColumnName="ID_CUS" />
+          <ScalarProperty Name="NAME_CUS" ColumnName="NAME_CUS" />
+          <ScalarProperty Name="SEX" ColumnName="SEX" />
+          <ScalarProperty Name="DATEOFBIRTH" ColumnName="DATEOFBIRTH" />
+          <ScalarProperty Name="PHONE" ColumnName="PHONE" />
+          <ScalarProperty Name="ADDRESS_CUS" ColumnName="ADDRESS_CUS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EMPLOYEEs">
+      <EntityTypeMapping TypeName="QLBANHANGPIZZAModel.EMPLOYEE">
+        <MappingFragment StoreEntitySet="EMPLOYEE">
+          <ScalarProperty Name="ID_Emp" ColumnName="ID_Emp" />
+          <ScalarProperty Name="Name_Emp" ColumnName="Name_Emp" />
+          <ScalarProperty Name="Sex" ColumnName="Sex" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Address_Emp" ColumnName="Address_Emp" />
+          <ScalarProperty Name="Position" ColumnName="Position" />
+          <ScalarProperty Name="STATUS_EMP" ColumnName="STATUS_EMP" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EMPLOYEE_WORK">
+      <EntityTypeMapping TypeName="QLBANHANGPIZZAModel.EMPLOYEE_WORK">
+        <MappingFragment StoreEntitySet="EMPLOYEE_WORK">
+          <ScalarProperty Name="ID_Emp" ColumnName="ID_Emp" />
+          <ScalarProperty Name="Work_Date" ColumnName="Work_Date" />
+          <ScalarProperty Name="Work_Shift" ColumnName="Work_Shift" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PRODUCTS">
+      <EntityTypeMapping TypeName="QLBANHANGPIZZAModel.PRODUCT">
+        <MappingFragment StoreEntitySet="PRODUCTS">
+          <ScalarProperty Name="ID_PRO" ColumnName="ID_PRO" />
+          <ScalarProperty Name="NAMEPRO" ColumnName="NAMEPRO" />
+          <ScalarProperty Name="ID_CATE" ColumnName="ID_CATE" />
+          <ScalarProperty Name="QUANTITY" ColumnName="QUANTITY" />
+          <ScalarProperty Name="UNIT" ColumnName="UNIT" />
+          <ScalarProperty Name="PICTURE" ColumnName="PICTURE" />
+          <ScalarProperty Name="UNITPRICEPRO" ColumnName="UNITPRICEPRO" />
+          <ScalarProperty Name="STATUS_PRO" ColumnName="STATUS_PRO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="9c3fee8db36444b788ff0b581d967f6b" Name="Diagram1">
+        <EntityTypeShape EntityType="QLBANHANGPIZZAModel.ACCOUNT" Width="1.5" PointX="3" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBANHANGPIZZAModel.BILL" Width="1.5" PointX="6" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBANHANGPIZZAModel.BILLDETAIL" Width="1.5" PointX="8.25" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBANHANGPIZZAModel.CATEGORy" Width="1.5" PointX="3.75" PointY="14.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBANHANGPIZZAModel.CUSTOMER" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBANHANGPIZZAModel.EMPLOYEE" Width="1.5" PointX="0.75" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBANHANGPIZZAModel.EMPLOYEE_WORK" Width="1.5" PointX="3" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBANHANGPIZZAModel.PRODUCT" Width="1.5" PointX="6" PointY="13.5" IsExpanded="true" />
+        <AssociationConnector Association="QLBANHANGPIZZAModel.FK_Account_Employee" ManuallyRouted="false" />
+        <AssociationConnector Association="QLBANHANGPIZZAModel.FK_Bill_Cus" ManuallyRouted="false" />
+        <AssociationConnector Association="QLBANHANGPIZZAModel.FK_Bill_Emp" ManuallyRouted="false" />
+        <AssociationConnector Association="QLBANHANGPIZZAModel.FK_BILLDETAIL_BILL" ManuallyRouted="false" />
+        <AssociationConnector Association="QLBANHANGPIZZAModel.FK_BillDetail" ManuallyRouted="false" />
+        <AssociationConnector Association="QLBANHANGPIZZAModel.FK_Products_Categories" ManuallyRouted="false" />
+        <AssociationConnector Association="QLBANHANGPIZZAModel.FK_EMPWORK_EMP" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,207 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QLBANHANGPIZZAModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="ACCOUNT">
+    <Key>
+      <PropertyRef Name="ID_User" />
+    </Key>
+    <Property Name="ID_Emp" Type="char" MaxLength="11" Nullable="false" />
+    <Property Name="ID_User" Type="char" MaxLength="11" Nullable="false" />
+    <Property Name="PASS" Type="varchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BILL">
+    <Key>
+      <PropertyRef Name="ID_Bill" />
+    </Key>
+    <Property Name="ID_Bill" Type="char" MaxLength="11" Nullable="false" />
+    <Property Name="ID_Cus" Type="char" MaxLength="11" Nullable="false" />
+    <Property Name="ID_Emp" Type="char" MaxLength="11" Nullable="false" />
+    <Property Name="DateFounded" Type="date" Nullable="false" />
+    <Property Name="TotalMoney" Type="char" MaxLength="11" Nullable="false" />
+    <Property Name="BillNotes" Type="ntext" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BILLDETAIL">
+    <Key>
+      <PropertyRef Name="ID_Bill" />
+      <PropertyRef Name="ID_Pro" />
+    </Key>
+    <Property Name="ID_Bill" Type="char" MaxLength="11" Nullable="false" />
+    <Property Name="ID_Pro" Type="char" MaxLength="11" Nullable="false" />
+    <Property Name="Quantity" Type="char" MaxLength="11" Nullable="false" />
+    <Property Name="UnitPrice" Type="char" MaxLength="11" Nullable="false" />
+    <Property Name="IntoMoney" Type="char" MaxLength="11" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CATEGORIES">
+    <Key>
+      <PropertyRef Name="ID_CATE" />
+    </Key>
+    <Property Name="ID_CATE" Type="char" MaxLength="11" Nullable="false" />
+    <Property Name="NAME_CATE" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CUSTOMER">
+    <Key>
+      <PropertyRef Name="ID_CUS" />
+    </Key>
+    <Property Name="ID_CUS" Type="char" MaxLength="11" Nullable="false" />
+    <Property Name="NAME_CUS" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="SEX" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="DATEOFBIRTH" Type="date" Nullable="false" />
+    <Property Name="PHONE" Type="char" MaxLength="11" Nullable="false" />
+    <Property Name="ADDRESS_CUS" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EMPLOYEE">
+    <Key>
+      <PropertyRef Name="ID_Emp" />
+    </Key>
+    <Property Name="ID_Emp" Type="char" MaxLength="11" Nullable="false" />
+    <Property Name="Name_Emp" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Sex" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="DateOfBirth" Type="date" Nullable="false" />
+    <Property Name="Phone" Type="char" MaxLength="11" Nullable="false" />
+    <Property Name="Address_Emp" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Position" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="STATUS_EMP" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="EMPLOYEE_WORK">
+    <Key>
+      <PropertyRef Name="ID_Emp" />
+    </Key>
+    <Property Name="ID_Emp" Type="char" MaxLength="11" Nullable="false" />
+    <Property Name="Work_Date" Type="date" Nullable="false" />
+    <Property Name="Work_Shift" Type="nvarchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PRODUCTS">
+    <Key>
+      <PropertyRef Name="ID_PRO" />
+    </Key>
+    <Property Name="ID_PRO" Type="char" MaxLength="11" Nullable="false" />
+    <Property Name="NAMEPRO" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ID_CATE" Type="char" MaxLength="11" Nullable="false" />
+    <Property Name="QUANTITY" Type="char" MaxLength="11" Nullable="false" />
+    <Property Name="UNIT" Type="nvarchar" MaxLength="5" Nullable="false" />
+    <Property Name="PICTURE" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="UNITPRICEPRO" Type="char" MaxLength="11" Nullable="false" />
+    <Property Name="STATUS_PRO" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <Association Name="FK_Account_Employee">
+    <End Role="EMPLOYEE" Type="Self.EMPLOYEE" Multiplicity="1" />
+    <End Role="ACCOUNT" Type="Self.ACCOUNT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EMPLOYEE">
+        <PropertyRef Name="ID_Emp" />
+      </Principal>
+      <Dependent Role="ACCOUNT">
+        <PropertyRef Name="ID_Emp" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Bill_Cus">
+    <End Role="CUSTOMER" Type="Self.CUSTOMER" Multiplicity="1" />
+    <End Role="BILL" Type="Self.BILL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CUSTOMER">
+        <PropertyRef Name="ID_CUS" />
+      </Principal>
+      <Dependent Role="BILL">
+        <PropertyRef Name="ID_Cus" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Bill_Emp">
+    <End Role="EMPLOYEE" Type="Self.EMPLOYEE" Multiplicity="1" />
+    <End Role="BILL" Type="Self.BILL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EMPLOYEE">
+        <PropertyRef Name="ID_Emp" />
+      </Principal>
+      <Dependent Role="BILL">
+        <PropertyRef Name="ID_Emp" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BillDetail">
+    <End Role="PRODUCTS" Type="Self.PRODUCTS" Multiplicity="1" />
+    <End Role="BILLDETAIL" Type="Self.BILLDETAIL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PRODUCTS">
+        <PropertyRef Name="ID_PRO" />
+      </Principal>
+      <Dependent Role="BILLDETAIL">
+        <PropertyRef Name="ID_Pro" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BILLDETAIL_BILL">
+    <End Role="BILL" Type="Self.BILL" Multiplicity="1" />
+    <End Role="BILLDETAIL" Type="Self.BILLDETAIL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BILL">
+        <PropertyRef Name="ID_Bill" />
+      </Principal>
+      <Dependent Role="BILLDETAIL">
+        <PropertyRef Name="ID_Bill" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EMPWORK_EMP">
+    <End Role="EMPLOYEE" Type="Self.EMPLOYEE" Multiplicity="1" />
+    <End Role="EMPLOYEE_WORK" Type="Self.EMPLOYEE_WORK" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="EMPLOYEE">
+        <PropertyRef Name="ID_Emp" />
+      </Principal>
+      <Dependent Role="EMPLOYEE_WORK">
+        <PropertyRef Name="ID_Emp" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Products_Categories">
+    <End Role="CATEGORIES" Type="Self.CATEGORIES" Multiplicity="1" />
+    <End Role="PRODUCTS" Type="Self.PRODUCTS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CATEGORIES">
+        <PropertyRef Name="ID_CATE" />
+      </Principal>
+      <Dependent Role="PRODUCTS">
+        <PropertyRef Name="ID_CATE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="QLBANHANGPIZZAModelStoreContainer">
+    <EntitySet Name="ACCOUNT" EntityType="Self.ACCOUNT" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BILL" EntityType="Self.BILL" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BILLDETAIL" EntityType="Self.BILLDETAIL" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CATEGORIES" EntityType="Self.CATEGORIES" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CUSTOMER" EntityType="Self.CUSTOMER" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EMPLOYEE" EntityType="Self.EMPLOYEE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EMPLOYEE_WORK" EntityType="Self.EMPLOYEE_WORK" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PRODUCTS" EntityType="Self.PRODUCTS" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Account_Employee" Association="Self.FK_Account_Employee">
+      <End Role="EMPLOYEE" EntitySet="EMPLOYEE" />
+      <End Role="ACCOUNT" EntitySet="ACCOUNT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Bill_Cus" Association="Self.FK_Bill_Cus">
+      <End Role="CUSTOMER" EntitySet="CUSTOMER" />
+      <End Role="BILL" EntitySet="BILL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Bill_Emp" Association="Self.FK_Bill_Emp">
+      <End Role="EMPLOYEE" EntitySet="EMPLOYEE" />
+      <End Role="BILL" EntitySet="BILL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BillDetail" Association="Self.FK_BillDetail">
+      <End Role="PRODUCTS" EntitySet="PRODUCTS" />
+      <End Role="BILLDETAIL" EntitySet="BILLDETAIL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BILLDETAIL_BILL" Association="Self.FK_BILLDETAIL_BILL">
+      <End Role="BILL" EntitySet="BILL" />
+      <End Role="BILLDETAIL" EntitySet="BILLDETAIL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EMPWORK_EMP" Association="Self.FK_EMPWORK_EMP">
+      <End Role="EMPLOYEE" EntitySet="EMPLOYEE" />
+      <End Role="EMPLOYEE_WORK" EntitySet="EMPLOYEE_WORK" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Products_Categories" Association="Self.FK_Products_Categories">
+      <End Role="CATEGORIES" EntitySet="CATEGORIES" />
+      <End Role="PRODUCTS" EntitySet="PRODUCTS" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
