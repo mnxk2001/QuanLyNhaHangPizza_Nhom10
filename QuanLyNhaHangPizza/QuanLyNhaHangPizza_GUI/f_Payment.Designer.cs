@@ -31,16 +31,16 @@ namespace QuanLyNhaHangPizza_GUI
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f_Payment));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.groupF2 = new System.Windows.Forms.GroupBox();
+            this.flpF2 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnF2_T1 = new System.Windows.Forms.Button();
             this.btnF2_T2 = new System.Windows.Forms.Button();
             this.btnF2_T3 = new System.Windows.Forms.Button();
             this.btnF2_T4 = new System.Windows.Forms.Button();
             this.btnF2_T5 = new System.Windows.Forms.Button();
             this.btnF2_T6 = new System.Windows.Forms.Button();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.groupF1 = new System.Windows.Forms.GroupBox();
+            this.flpF1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnF1_T1 = new System.Windows.Forms.Button();
             this.btnF1_T2 = new System.Windows.Forms.Button();
             this.btnF1_T3 = new System.Windows.Forms.Button();
@@ -63,7 +63,7 @@ namespace QuanLyNhaHangPizza_GUI
             this.rbtnTienMat = new System.Windows.Forms.RadioButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lbFloor = new System.Windows.Forms.Label();
-            this.cbEmp_ID = new System.Windows.Forms.ComboBox();
+            this.cbEmp_Name = new System.Windows.Forms.ComboBox();
             this.cbCus_Name = new System.Windows.Forms.ComboBox();
             this.dtpDateFounded = new System.Windows.Forms.DateTimePicker();
             this.gridProduct = new System.Windows.Forms.DataGridView();
@@ -77,10 +77,10 @@ namespace QuanLyNhaHangPizza_GUI
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.flpDrink = new System.Windows.Forms.FlowLayoutPanel();
             this.groupBox1.SuspendLayout();
-            this.groupBox7.SuspendLayout();
-            this.flowLayoutPanel2.SuspendLayout();
-            this.groupBox6.SuspendLayout();
-            this.flowLayoutPanel1.SuspendLayout();
+            this.groupF2.SuspendLayout();
+            this.flpF2.SuspendLayout();
+            this.groupF1.SuspendLayout();
+            this.flpF1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -92,8 +92,8 @@ namespace QuanLyNhaHangPizza_GUI
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.groupBox7);
-            this.groupBox1.Controls.Add(this.groupBox6);
+            this.groupBox1.Controls.Add(this.groupF2);
+            this.groupBox1.Controls.Add(this.groupF1);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Left;
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.White;
@@ -101,35 +101,36 @@ namespace QuanLyNhaHangPizza_GUI
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox1.Size = new System.Drawing.Size(386, 822);
+            this.groupBox1.Size = new System.Drawing.Size(371, 822);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "CHỌN BÀN";
             // 
-            // groupBox7
+            // groupF2
             // 
-            this.groupBox7.Controls.Add(this.flowLayoutPanel2);
-            this.groupBox7.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupBox7.ForeColor = System.Drawing.Color.White;
-            this.groupBox7.Location = new System.Drawing.Point(3, 504);
-            this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(380, 314);
-            this.groupBox7.TabIndex = 4;
-            this.groupBox7.TabStop = false;
-            this.groupBox7.Text = "Tầng 2";
+            this.groupF2.Controls.Add(this.flpF2);
+            this.groupF2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.groupF2.ForeColor = System.Drawing.Color.White;
+            this.groupF2.Location = new System.Drawing.Point(3, 504);
+            this.groupF2.Name = "groupF2";
+            this.groupF2.Size = new System.Drawing.Size(365, 314);
+            this.groupF2.TabIndex = 4;
+            this.groupF2.TabStop = false;
+            this.groupF2.Text = "Tầng 2";
             // 
-            // flowLayoutPanel2
+            // flpF2
             // 
-            this.flowLayoutPanel2.Controls.Add(this.btnF2_T1);
-            this.flowLayoutPanel2.Controls.Add(this.btnF2_T2);
-            this.flowLayoutPanel2.Controls.Add(this.btnF2_T3);
-            this.flowLayoutPanel2.Controls.Add(this.btnF2_T4);
-            this.flowLayoutPanel2.Controls.Add(this.btnF2_T5);
-            this.flowLayoutPanel2.Controls.Add(this.btnF2_T6);
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(6, 30);
-            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(354, 193);
-            this.flowLayoutPanel2.TabIndex = 2;
+            this.flpF2.AutoScroll = true;
+            this.flpF2.Controls.Add(this.btnF2_T1);
+            this.flpF2.Controls.Add(this.btnF2_T2);
+            this.flpF2.Controls.Add(this.btnF2_T3);
+            this.flpF2.Controls.Add(this.btnF2_T4);
+            this.flpF2.Controls.Add(this.btnF2_T5);
+            this.flpF2.Controls.Add(this.btnF2_T6);
+            this.flpF2.Location = new System.Drawing.Point(6, 30);
+            this.flpF2.Name = "flpF2";
+            this.flpF2.Size = new System.Drawing.Size(354, 193);
+            this.flpF2.TabIndex = 2;
             // 
             // btnF2_T1
             // 
@@ -143,6 +144,7 @@ namespace QuanLyNhaHangPizza_GUI
             this.btnF2_T1.Text = "Bàn 1";
             this.btnF2_T1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnF2_T1.UseVisualStyleBackColor = true;
+            this.btnF2_T1.Click += new System.EventHandler(this.btnF1_T1_Click);
             // 
             // btnF2_T2
             // 
@@ -156,6 +158,7 @@ namespace QuanLyNhaHangPizza_GUI
             this.btnF2_T2.Text = "Bàn 2";
             this.btnF2_T2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnF2_T2.UseVisualStyleBackColor = true;
+            this.btnF2_T2.Click += new System.EventHandler(this.btnF1_T1_Click);
             // 
             // btnF2_T3
             // 
@@ -169,6 +172,7 @@ namespace QuanLyNhaHangPizza_GUI
             this.btnF2_T3.Text = "Bàn 3";
             this.btnF2_T3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnF2_T3.UseVisualStyleBackColor = true;
+            this.btnF2_T3.Click += new System.EventHandler(this.btnF1_T1_Click);
             // 
             // btnF2_T4
             // 
@@ -182,6 +186,7 @@ namespace QuanLyNhaHangPizza_GUI
             this.btnF2_T4.Text = "Bàn 4";
             this.btnF2_T4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnF2_T4.UseVisualStyleBackColor = true;
+            this.btnF2_T4.Click += new System.EventHandler(this.btnF1_T1_Click);
             // 
             // btnF2_T5
             // 
@@ -195,6 +200,7 @@ namespace QuanLyNhaHangPizza_GUI
             this.btnF2_T5.Text = "Bàn 5";
             this.btnF2_T5.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnF2_T5.UseVisualStyleBackColor = true;
+            this.btnF2_T5.Click += new System.EventHandler(this.btnF1_T1_Click);
             // 
             // btnF2_T6
             // 
@@ -208,34 +214,36 @@ namespace QuanLyNhaHangPizza_GUI
             this.btnF2_T6.Text = "Bàn 6";
             this.btnF2_T6.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnF2_T6.UseVisualStyleBackColor = true;
+            this.btnF2_T6.Click += new System.EventHandler(this.btnF1_T1_Click);
             // 
-            // groupBox6
+            // groupF1
             // 
-            this.groupBox6.Controls.Add(this.flowLayoutPanel1);
-            this.groupBox6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBox6.ForeColor = System.Drawing.Color.White;
-            this.groupBox6.Location = new System.Drawing.Point(3, 28);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(380, 437);
-            this.groupBox6.TabIndex = 3;
-            this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "Tầng 1";
+            this.groupF1.Controls.Add(this.flpF1);
+            this.groupF1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupF1.ForeColor = System.Drawing.Color.White;
+            this.groupF1.Location = new System.Drawing.Point(3, 28);
+            this.groupF1.Name = "groupF1";
+            this.groupF1.Size = new System.Drawing.Size(365, 437);
+            this.groupF1.TabIndex = 3;
+            this.groupF1.TabStop = false;
+            this.groupF1.Text = "Tầng 1";
             // 
-            // flowLayoutPanel1
+            // flpF1
             // 
-            this.flowLayoutPanel1.Controls.Add(this.btnF1_T1);
-            this.flowLayoutPanel1.Controls.Add(this.btnF1_T2);
-            this.flowLayoutPanel1.Controls.Add(this.btnF1_T3);
-            this.flowLayoutPanel1.Controls.Add(this.btnF1_T4);
-            this.flowLayoutPanel1.Controls.Add(this.btnF1_T5);
-            this.flowLayoutPanel1.Controls.Add(this.btnF1_T6);
-            this.flowLayoutPanel1.Controls.Add(this.btnF1_T7);
-            this.flowLayoutPanel1.Controls.Add(this.btnF1_T8);
-            this.flowLayoutPanel1.Controls.Add(this.btnF1_T9);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(11, 30);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(349, 285);
-            this.flowLayoutPanel1.TabIndex = 0;
+            this.flpF1.AutoScroll = true;
+            this.flpF1.Controls.Add(this.btnF1_T1);
+            this.flpF1.Controls.Add(this.btnF1_T2);
+            this.flpF1.Controls.Add(this.btnF1_T3);
+            this.flpF1.Controls.Add(this.btnF1_T4);
+            this.flpF1.Controls.Add(this.btnF1_T5);
+            this.flpF1.Controls.Add(this.btnF1_T6);
+            this.flpF1.Controls.Add(this.btnF1_T7);
+            this.flpF1.Controls.Add(this.btnF1_T8);
+            this.flpF1.Controls.Add(this.btnF1_T9);
+            this.flpF1.Location = new System.Drawing.Point(11, 30);
+            this.flpF1.Name = "flpF1";
+            this.flpF1.Size = new System.Drawing.Size(349, 285);
+            this.flpF1.TabIndex = 0;
             // 
             // btnF1_T1
             // 
@@ -249,6 +257,7 @@ namespace QuanLyNhaHangPizza_GUI
             this.btnF1_T1.Text = "Bàn 1";
             this.btnF1_T1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnF1_T1.UseVisualStyleBackColor = true;
+            this.btnF1_T1.Click += new System.EventHandler(this.btnF1_T1_Click);
             // 
             // btnF1_T2
             // 
@@ -262,6 +271,7 @@ namespace QuanLyNhaHangPizza_GUI
             this.btnF1_T2.Text = "Bàn 2";
             this.btnF1_T2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnF1_T2.UseVisualStyleBackColor = true;
+            this.btnF1_T2.Click += new System.EventHandler(this.btnF1_T1_Click);
             // 
             // btnF1_T3
             // 
@@ -275,6 +285,7 @@ namespace QuanLyNhaHangPizza_GUI
             this.btnF1_T3.Text = "Bàn 3";
             this.btnF1_T3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnF1_T3.UseVisualStyleBackColor = true;
+            this.btnF1_T3.Click += new System.EventHandler(this.btnF1_T1_Click);
             // 
             // btnF1_T4
             // 
@@ -288,6 +299,7 @@ namespace QuanLyNhaHangPizza_GUI
             this.btnF1_T4.Text = "Bàn 4";
             this.btnF1_T4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnF1_T4.UseVisualStyleBackColor = true;
+            this.btnF1_T4.Click += new System.EventHandler(this.btnF1_T1_Click);
             // 
             // btnF1_T5
             // 
@@ -301,6 +313,7 @@ namespace QuanLyNhaHangPizza_GUI
             this.btnF1_T5.Text = "Bàn 5";
             this.btnF1_T5.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnF1_T5.UseVisualStyleBackColor = true;
+            this.btnF1_T5.Click += new System.EventHandler(this.btnF1_T1_Click);
             // 
             // btnF1_T6
             // 
@@ -314,6 +327,7 @@ namespace QuanLyNhaHangPizza_GUI
             this.btnF1_T6.Text = "Bàn 6";
             this.btnF1_T6.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnF1_T6.UseVisualStyleBackColor = true;
+            this.btnF1_T6.Click += new System.EventHandler(this.btnF1_T1_Click);
             // 
             // btnF1_T7
             // 
@@ -327,6 +341,7 @@ namespace QuanLyNhaHangPizza_GUI
             this.btnF1_T7.Text = "Bàn 7";
             this.btnF1_T7.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnF1_T7.UseVisualStyleBackColor = true;
+            this.btnF1_T7.Click += new System.EventHandler(this.btnF1_T1_Click);
             // 
             // btnF1_T8
             // 
@@ -340,6 +355,7 @@ namespace QuanLyNhaHangPizza_GUI
             this.btnF1_T8.Text = "Bàn 8";
             this.btnF1_T8.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnF1_T8.UseVisualStyleBackColor = true;
+            this.btnF1_T8.Click += new System.EventHandler(this.btnF1_T1_Click);
             // 
             // btnF1_T9
             // 
@@ -353,6 +369,7 @@ namespace QuanLyNhaHangPizza_GUI
             this.btnF1_T9.Text = "Bàn 9";
             this.btnF1_T9.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnF1_T9.UseVisualStyleBackColor = true;
+            this.btnF1_T9.Click += new System.EventHandler(this.btnF1_T1_Click);
             // 
             // groupBox2
             // 
@@ -361,19 +378,20 @@ namespace QuanLyNhaHangPizza_GUI
             this.groupBox2.Controls.Add(this.flpPizza);
             this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.Color.White;
-            this.groupBox2.Location = new System.Drawing.Point(392, 13);
+            this.groupBox2.Location = new System.Drawing.Point(377, 13);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(327, 452);
+            this.groupBox2.Size = new System.Drawing.Size(342, 452);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "PIZZA";
             // 
             // flpPizza
             // 
+            this.flpPizza.AutoScroll = true;
             this.flpPizza.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flpPizza.Location = new System.Drawing.Point(3, 27);
             this.flpPizza.Name = "flpPizza";
-            this.flpPizza.Size = new System.Drawing.Size(321, 422);
+            this.flpPizza.Size = new System.Drawing.Size(336, 422);
             this.flpPizza.TabIndex = 0;
             // 
             // groupBox3
@@ -503,7 +521,7 @@ namespace QuanLyNhaHangPizza_GUI
             // panel1
             // 
             this.panel1.Controls.Add(this.lbFloor);
-            this.panel1.Controls.Add(this.cbEmp_ID);
+            this.panel1.Controls.Add(this.cbEmp_Name);
             this.panel1.Controls.Add(this.cbCus_Name);
             this.panel1.Controls.Add(this.dtpDateFounded);
             this.panel1.Controls.Add(this.gridProduct);
@@ -514,6 +532,7 @@ namespace QuanLyNhaHangPizza_GUI
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.lbTable);
+            this.panel1.ForeColor = System.Drawing.Color.White;
             this.panel1.Location = new System.Drawing.Point(6, 28);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(449, 538);
@@ -522,20 +541,21 @@ namespace QuanLyNhaHangPizza_GUI
             // lbFloor
             // 
             this.lbFloor.AutoSize = true;
-            this.lbFloor.Font = new System.Drawing.Font("Segoe UI", 10.5F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbFloor.Location = new System.Drawing.Point(332, 119);
+            this.lbFloor.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbFloor.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.lbFloor.Location = new System.Drawing.Point(187, 12);
             this.lbFloor.Name = "lbFloor";
-            this.lbFloor.Size = new System.Drawing.Size(66, 25);
+            this.lbFloor.Size = new System.Drawing.Size(107, 41);
             this.lbFloor.TabIndex = 7;
             this.lbFloor.Text = "Tầng 1";
             // 
-            // cbEmp_ID
+            // cbEmp_Name
             // 
-            this.cbEmp_ID.FormattingEnabled = true;
-            this.cbEmp_ID.Location = new System.Drawing.Point(177, 225);
-            this.cbEmp_ID.Name = "cbEmp_ID";
-            this.cbEmp_ID.Size = new System.Drawing.Size(221, 31);
-            this.cbEmp_ID.TabIndex = 6;
+            this.cbEmp_Name.FormattingEnabled = true;
+            this.cbEmp_Name.Location = new System.Drawing.Point(177, 225);
+            this.cbEmp_Name.Name = "cbEmp_Name";
+            this.cbEmp_Name.Size = new System.Drawing.Size(221, 31);
+            this.cbEmp_Name.TabIndex = 6;
             // 
             // cbCus_Name
             // 
@@ -562,6 +582,7 @@ namespace QuanLyNhaHangPizza_GUI
             // 
             this.gridProduct.BackgroundColor = System.Drawing.Color.White;
             this.gridProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridProduct.GridColor = System.Drawing.Color.Black;
             this.gridProduct.Location = new System.Drawing.Point(25, 291);
             this.gridProduct.Name = "gridProduct";
             this.gridProduct.RowHeadersWidth = 51;
@@ -583,9 +604,9 @@ namespace QuanLyNhaHangPizza_GUI
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(20, 229);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(133, 25);
+            this.label7.Size = new System.Drawing.Size(139, 25);
             this.label7.TabIndex = 3;
-            this.label7.Text = "Mã nhân viên:";
+            this.label7.Text = "Người lập đơn:";
             // 
             // label6
             // 
@@ -626,11 +647,11 @@ namespace QuanLyNhaHangPizza_GUI
             // lbTable
             // 
             this.lbTable.AutoSize = true;
-            this.lbTable.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTable.ForeColor = System.Drawing.Color.Red;
-            this.lbTable.Location = new System.Drawing.Point(184, 109);
+            this.lbTable.Font = new System.Drawing.Font("Segoe UI", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTable.ForeColor = System.Drawing.Color.Gold;
+            this.lbTable.Location = new System.Drawing.Point(184, 83);
             this.lbTable.Name = "lbTable";
-            this.lbTable.Size = new System.Drawing.Size(80, 35);
+            this.lbTable.Size = new System.Drawing.Size(136, 57);
             this.lbTable.TabIndex = 0;
             this.lbTable.Text = "Bàn 1";
             // 
@@ -642,19 +663,20 @@ namespace QuanLyNhaHangPizza_GUI
             this.groupBox4.Controls.Add(this.flpDrink);
             this.groupBox4.Font = new System.Drawing.Font("Segoe UI", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox4.ForeColor = System.Drawing.Color.White;
-            this.groupBox4.Location = new System.Drawing.Point(392, 478);
+            this.groupBox4.Location = new System.Drawing.Point(377, 478);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(327, 344);
+            this.groupBox4.Size = new System.Drawing.Size(342, 344);
             this.groupBox4.TabIndex = 1;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "ĐỒ UỐNG";
             // 
             // flpDrink
             // 
+            this.flpDrink.AutoScroll = true;
             this.flpDrink.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flpDrink.Location = new System.Drawing.Point(3, 27);
             this.flpDrink.Name = "flpDrink";
-            this.flpDrink.Size = new System.Drawing.Size(321, 314);
+            this.flpDrink.Size = new System.Drawing.Size(336, 314);
             this.flpDrink.TabIndex = 0;
             // 
             // f_Payment
@@ -675,10 +697,10 @@ namespace QuanLyNhaHangPizza_GUI
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.f_Payment_Load);
             this.groupBox1.ResumeLayout(false);
-            this.groupBox7.ResumeLayout(false);
-            this.flowLayoutPanel2.ResumeLayout(false);
-            this.groupBox6.ResumeLayout(false);
-            this.flowLayoutPanel1.ResumeLayout(false);
+            this.groupF2.ResumeLayout(false);
+            this.flpF2.ResumeLayout(false);
+            this.groupF1.ResumeLayout(false);
+            this.flpF1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
@@ -698,7 +720,7 @@ namespace QuanLyNhaHangPizza_GUI
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.FlowLayoutPanel flpF1;
         private System.Windows.Forms.Button btnF1_T1;
         private System.Windows.Forms.Button btnF1_T2;
         private System.Windows.Forms.Button btnF1_T3;
@@ -708,7 +730,7 @@ namespace QuanLyNhaHangPizza_GUI
         private System.Windows.Forms.Button btnF1_T7;
         private System.Windows.Forms.Button btnF1_T8;
         private System.Windows.Forms.Button btnF1_T9;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
+        private System.Windows.Forms.FlowLayoutPanel flpF2;
         private System.Windows.Forms.Button btnF2_T1;
         private System.Windows.Forms.Button btnF2_T2;
         private System.Windows.Forms.Button btnF2_T3;
@@ -716,7 +738,7 @@ namespace QuanLyNhaHangPizza_GUI
         private System.Windows.Forms.Button btnF2_T5;
         private System.Windows.Forms.Button btnF2_T6;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.ComboBox cbEmp_ID;
+        private System.Windows.Forms.ComboBox cbEmp_Name;
         private System.Windows.Forms.ComboBox cbCus_Name;
         private System.Windows.Forms.DateTimePicker dtpDateFounded;
         private System.Windows.Forms.DataGridView gridProduct;
@@ -737,8 +759,8 @@ namespace QuanLyNhaHangPizza_GUI
         private System.Windows.Forms.Label lbFloor;
         private System.Windows.Forms.FlowLayoutPanel flpPizza;
         private System.Windows.Forms.FlowLayoutPanel flpDrink;
-        private System.Windows.Forms.GroupBox groupBox7;
-        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.GroupBox groupF2;
+        private System.Windows.Forms.GroupBox groupF1;
         private System.Windows.Forms.Button btnExit;
     }
 }

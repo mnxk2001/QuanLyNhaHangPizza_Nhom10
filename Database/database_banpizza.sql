@@ -74,8 +74,8 @@ CREATE TABLE BILL
 	ID_Cus			CHAR(11) NOT NULL,
 	ID_Emp			CHAR(11) NOT NULL,
 	DateFounded		DATE NOT NULL,
-    TotalMoney		CHAR(11)NOT NULL,
-	BillNotes		NTEXT NOT NULL,
+    TotalMoney		CHAR(11) NULL,
+	BillNotes		NTEXT NULL,
 	CONSTRAINT PK_Bill PRIMARY KEY(ID_Bill),
 	
 )
@@ -396,98 +396,98 @@ VALUES
     'A111',        -- ID_Cus - char(10)
     'NV01',        -- ID_Emp - char(10)
     '20211121', -- DateFounded - date
-    '2.000.000',        -- TotalMoney - int(20)
+    '448.000',        -- TotalMoney - int(20)
     N'Đã thanh toán'        -- BillNotes - ntext
 ),
 (   '1112',        -- MAHD - char(10)
     'A112',        -- MAKH - char(10)
     'NV01',        -- MANV - char(10)
     '20211122', -- NGAYLAP - date
-    '5.000.000',        -- TONGTIEN - int(20)
+    '1.628.000',        -- TONGTIEN - int(20)
     N'Đã thanh toán'        -- GHICHU - ntext
 ),
 (   '1113',        -- MAHD - char(10)
     'A113',        -- MAKH - char(10)
     'NV01',        -- MANV - char(10)
     '20211123', -- NGAYLAP - date
-    '4.000.000',        -- TONGTIEN - int(20)
+    '1.823.000',        -- TONGTIEN - int(20)
     N'Đã thanh toán'        -- GHICHU - ntext
 ),
 (   '1114',        -- MAHD - char(10)
     'A114',        -- MAKH - char(10)
     'NV01',        -- MANV - char(10)
     '20211124', -- NGAYLAP - date
-    '6.000.000',        -- TONGTIEN - int(20)
+    '591.000',        -- TONGTIEN - int(20)
     N'Đã thanh toán'        -- GHICHU - ntext
 ),
 (   '1115',        -- MAHD - char(10)
     'A115',        -- MAKH - char(10)
     'NV01',        -- MANV - char(10)
     '20211125', -- NGAYLAP - date
-    '900.000',        -- TONGTIEN - int(20)
+    '2.185.000',        -- TONGTIEN - int(20)
     N'Đã thanh toán'        -- GHICHU - ntext
 ),
 (   '1116',        -- MAHD - char(10)
     'A116',        -- MAKH - char(10)
     'NV02',        -- MANV - char(10)
     '20211202', -- NGAYLAP - date
-    '500.000',        -- TONGTIEN - int(20)
+    '736.000',        -- TONGTIEN - int(20)
     N'Đã thanh toán'        -- GHICHU - ntext
 ),
 (   '1117',        -- MAHD - char(10)
     'A117',        -- MAKH - char(10)
     'NV03',        -- MANV - char(10)
     '20211203', -- NGAYLAP - date
-    '489.000',        -- TONGTIEN - int(20)
+    '260.000',        -- TONGTIEN - int(20)
     N'Đã thanh toán'        -- GHICHU - ntext
 ),
 (   '1118',        -- MAHD - char(10)
     'A118',        -- MAKH - char(10)
     'NV04',        -- MANV - char(10)
     '20211204', -- NGAYLAP - date
-    '8.000.000',        -- TONGTIEN - int(20)
+    '178.000',        -- TONGTIEN - int(20)
     N'Đã thanh toán'        -- GHICHU - ntext
 ),
 (   '1119',        -- MAHD - char(10)
     'A119',        -- MAKH - char(10)
     'NV01',        -- MANV - char(10)
     '20211205', -- NGAYLAP - date
-    '710.00',        -- TONGTIEN - int(20)
+    '1.230.000',        -- TONGTIEN - int(20)
     N'Đã thanh toán'        -- GHICHU - ntext
 ),
 (   '1120',        -- MAHD - char(10)
     'A120',        -- MAKH - char(10)
     'NV02',        -- MANV - char(10)
     '20211206', -- NGAYLAP - date
-    '430.000',        -- TONGTIEN - int(20)
+    '606.000',        -- TONGTIEN - int(20)
     N'Đã thanh toán'        -- GHICHU - ntext
 ),
 (   '1121',        -- MAHD - char(10)
     'A112',        -- MAKH - char(10)
     'NV03',        -- MANV - char(10)
     '20210207', -- NGAYLAP - date
-    '830.000',        -- TONGTIEN - int(20)
+    '260.000',        -- TONGTIEN - int(20)
     N'Đã thanh toán'        -- GHICHU - ntext
 ),
 (   '1122',        -- MAHD - char(10)
     'A113',        -- MAKH - char(10)
     'NV04',        -- MANV - char(10)
     '20210207', -- NGAYLAP - date
-    '250.000',        -- TONGTIEN - int(20)
+    '260.000',        -- TONGTIEN - int(20)
     N'Đã thanh toán'        -- GHICHU - ntext
 ),
 (   '1123',        -- MAHD - char(10)
     'A114',        -- MAKH - char(10)
     'NV03',        -- MANV - char(10)
     '20210207', -- NGAYLAP - date
-    '1.930.000',        -- TONGTIEN - int(20)
+    '951.000',        -- TONGTIEN - int(20)
     N'Đã thanh toán'        -- GHICHU - ntext
 ),
 (   '1124',        -- MAHD - char(10)
     'A115',        -- MAKH - char(10)
     'NV04',        -- MANV - char(10)
     '20210208', -- NGAYLAP - date
-    '645.000',        -- TONGTIEN - int(20)
+    '2.885.000',        -- TONGTIEN - int(20)
     N'Đã thanh toán'        -- GHICHU - ntext
 )
 GO

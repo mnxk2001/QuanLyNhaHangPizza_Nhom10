@@ -5,7 +5,6 @@ D:\LTCSDL\QuanLyNhaHangPizza_Nhom10\QuanLyNhaHangPizza\QuanLyNhaHangPizza_GUI\bi
 D:\LTCSDL\QuanLyNhaHangPizza_Nhom10\QuanLyNhaHangPizza\QuanLyNhaHangPizza_GUI\bin\Debug\EntityFramework.SqlServer.dll
 D:\LTCSDL\QuanLyNhaHangPizza_Nhom10\QuanLyNhaHangPizza\QuanLyNhaHangPizza_GUI\bin\Debug\EntityFramework.xml
 D:\LTCSDL\QuanLyNhaHangPizza_Nhom10\QuanLyNhaHangPizza\QuanLyNhaHangPizza_GUI\bin\Debug\EntityFramework.SqlServer.xml
-D:\LTCSDL\QuanLyNhaHangPizza_Nhom10\QuanLyNhaHangPizza\QuanLyNhaHangPizza_GUI\obj\Debug\QuanLyNhaHangPizza_GUI.csproj.AssemblyReference.cache
 D:\LTCSDL\QuanLyNhaHangPizza_Nhom10\QuanLyNhaHangPizza\QuanLyNhaHangPizza_GUI\obj\Debug\QuanLyNhaHangPizza_GUI.Properties.Resources.resources
 D:\LTCSDL\QuanLyNhaHangPizza_Nhom10\QuanLyNhaHangPizza\QuanLyNhaHangPizza_GUI\obj\Debug\QuanLyNhaHangPizza_GUI.csproj.GenerateResource.cache
 D:\LTCSDL\QuanLyNhaHangPizza_Nhom10\QuanLyNhaHangPizza\QuanLyNhaHangPizza_GUI\obj\Debug\QuanLyNhaHangPizza_GUI.csproj.CoreCompileInputs.cache
@@ -23,3 +22,4 @@ D:\LTCSDL\QuanLyNhaHangPizza_Nhom10\QuanLyNhaHangPizza\QuanLyNhaHangPizza_GUI\ob
 D:\LTCSDL\QuanLyNhaHangPizza_Nhom10\QuanLyNhaHangPizza\QuanLyNhaHangPizza_GUI\obj\Debug\QuanLyNhaHangPizza_GUI.f_Menu_Emp.resources
 D:\LTCSDL\QuanLyNhaHangPizza_Nhom10\QuanLyNhaHangPizza\QuanLyNhaHangPizza_GUI\obj\Debug\QuanLyNhaHangPizza_GUI.f_Payment.resources
 D:\LTCSDL\QuanLyNhaHangPizza_Nhom10\QuanLyNhaHangPizza\QuanLyNhaHangPizza_GUI\obj\Debug\QuanLyNhaHangPizza_GUI.f_SchelWork_Emp.resources
+D:\LTCSDL\QuanLyNhaHangPizza_Nhom10\QuanLyNhaHangPizza\QuanLyNhaHangPizza_GUI\obj\Debug\QuanLyNhaHangPizza_GUI.csproj.AssemblyReference.cache
