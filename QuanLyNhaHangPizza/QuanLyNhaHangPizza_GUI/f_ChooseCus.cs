@@ -23,5 +23,16 @@ namespace QuanLyNhaHangPizza_GUI
             f_Payment pay = new f_Payment();
             pay.ShowDialog();
         }
+
+        private void btnNew_Click(object sender, EventArgs e)
+        {
+            f_AddCus addCus = new f_AddCus();
+            addCus.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

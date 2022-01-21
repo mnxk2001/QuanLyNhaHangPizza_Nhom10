@@ -16,8 +16,8 @@
     <Property Name="ID_Cus" Type="char" MaxLength="11" Nullable="false" />
     <Property Name="ID_Emp" Type="char" MaxLength="11" Nullable="false" />
     <Property Name="DateFounded" Type="date" Nullable="false" />
-    <Property Name="TotalMoney" Type="char" MaxLength="11" Nullable="false" />
-    <Property Name="BillNotes" Type="ntext" Nullable="false" />
+    <Property Name="TotalMoney" Type="char" MaxLength="11" />
+    <Property Name="BillNotes" Type="ntext" />
   </EntityType>
   <EntityType Name="BILLDETAIL">
     <Key>
@@ -166,6 +166,22 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Function Name="sp_CheckIDPro_BillDetail" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="idBill" Type="char" Mode="In" />
+    <Parameter Name="idPro" Type="char" Mode="In" />
+  </Function>
+  <Function Name="sp_CheckIDPro_Product" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="idPro" Type="char" Mode="In" />
+  </Function>
+  <Function Name="sp_getLastBill" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_updateQuantityProduct" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="idPro" Type="char" Mode="In" />
+    <Parameter Name="quantity" Type="char" Mode="In" />
+  </Function>
+  <Function Name="sp_updateTotalMoney" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="idBill" Type="char" Mode="In" />
+    <Parameter Name="totalMoney" Type="char" Mode="In" />
+  </Function>
   <EntityContainer Name="QLBANHANGPIZZAModelStoreContainer">
     <EntitySet Name="ACCOUNT" EntityType="Self.ACCOUNT" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="BILL" EntityType="Self.BILL" Schema="dbo" store:Type="Tables" />

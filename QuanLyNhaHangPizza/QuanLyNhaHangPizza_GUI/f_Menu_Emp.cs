@@ -19,9 +19,11 @@ namespace QuanLyNhaHangPizza_GUI
 
         private void btnSchel_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            f_SchelWork_Emp schel = new f_SchelWork_Emp();
-            schel.ShowDialog();
+            //this.Hide();
+            //f_SchelWork_Emp schel = new f_SchelWork_Emp();
+            //schel.ShowDialog();
+
+            MessageBox.Show("Đang phát triển");
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -37,7 +39,7 @@ namespace QuanLyNhaHangPizza_GUI
 
         private void btnPay_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            //this.Hide();
             f_ChooseCus fChoose = new f_ChooseCus();
             fChoose.ShowDialog();
         }

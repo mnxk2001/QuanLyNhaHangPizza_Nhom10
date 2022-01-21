@@ -44,6 +44,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -64,19 +65,39 @@
     <Compile Include="BILLDETAIL.cs">
       <DependentUpon>RestaurantPizza.tt</DependentUpon>
     </Compile>
+    <Compile Include="BUS_Pizza\BUS_Bill.cs" />
+    <Compile Include="BUS_Pizza\BUS_BillDetail.cs" />
     <Compile Include="BUS_Pizza\BUS_Customer.cs" />
+    <Compile Include="BUS_Pizza\BUS_Employee.cs" />
+    <Compile Include="BUS_Pizza\BUS_Product.cs" />
     <Compile Include="CATEGORy.cs">
       <DependentUpon>RestaurantPizza.tt</DependentUpon>
     </Compile>
     <Compile Include="CUSTOMER.cs">
       <DependentUpon>RestaurantPizza.tt</DependentUpon>
     </Compile>
+    <Compile Include="DAO_Pizza\DAO_Bill.cs" />
+    <Compile Include="DAO_Pizza\DAO_BillDetail.cs" />
     <Compile Include="DAO_Pizza\DAO_Customer.cs" />
+    <Compile Include="DAO_Pizza\DAO_Employee.cs" />
+    <Compile Include="DAO_Pizza\DAO_Product.cs" />
     <Compile Include="EMPLOYEE.cs">
       <DependentUpon>RestaurantPizza.tt</DependentUpon>
     </Compile>
     <Compile Include="EMPLOYEE_WORK.cs">
       <DependentUpon>RestaurantPizza.tt</DependentUpon>
+    </Compile>
+    <Compile Include="f_AddCus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="f_AddCus.Designer.cs">
+      <DependentUpon>f_AddCus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="f_Bill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="f_Bill.Designer.cs">
+      <DependentUpon>f_Bill.cs</DependentUpon>
     </Compile>
     <Compile Include="f_ChooseCus.cs">
       <SubType>Form</SubType>
@@ -170,6 +191,15 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RestaurantPizza.edmx</DependentUpon>
     </Compile>
+    <Compile Include="sp_getLastBill_Result.cs">
+      <DependentUpon>RestaurantPizza.tt</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="f_AddCus.resx">
+      <DependentUpon>f_AddCus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="f_Bill.resx">
+      <DependentUpon>f_Bill.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="f_ChooseCus.resx">
       <DependentUpon>f_ChooseCus.cs</DependentUpon>
     </EmbeddedResource>
