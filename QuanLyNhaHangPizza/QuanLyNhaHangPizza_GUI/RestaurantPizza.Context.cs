@@ -12,6 +12,8 @@ namespace QuanLyNhaHangPizza_GUI
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Entity.Core.Objects;
+    using System.Linq;
     
     public partial class QLBANHANGPIZZAEntities : DbContext
     {
@@ -33,5 +35,92 @@ namespace QuanLyNhaHangPizza_GUI
         public virtual DbSet<EMPLOYEE> EMPLOYEEs { get; set; }
         public virtual DbSet<EMPLOYEE_WORK> EMPLOYEE_WORK { get; set; }
         public virtual DbSet<PRODUCT> PRODUCTS { get; set; }
+    
+        public virtual int sp_insertBillDetail(string idBill, string idPro, string qtt, string unitPrice, string intoMoney)
+        {
+            var idBillParameter = idBill != null ?
+                new ObjectParameter("idBill", idBill) :
+                new ObjectParameter("idBill", typeof(string));
+    
+            var idProParameter = idPro != null ?
+                new ObjectParameter("idPro", idPro) :
+                new ObjectParameter("idPro", typeof(string));
+    
+            var qttParameter = qtt != null ?
+                new ObjectParameter("qtt", qtt) :
+                new ObjectParameter("qtt", typeof(string));
+    
+            var unitPriceParameter = unitPrice != null ?
+                new ObjectParameter("unitPrice", unitPrice) :
+                new ObjectParameter("unitPrice", typeof(string));
+    
+            var intoMoneyParameter = intoMoney != null ?
+                new ObjectParameter("intoMoney", intoMoney) :
+                new ObjectParameter("intoMoney", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_insertBillDetail", idBillParameter, idProParameter, qttParameter, unitPriceParameter, intoMoneyParameter);
+        }
+    
+        public virtual ObjectResult<sp_getLastBill_Result> sp_getLastBill()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_getLastBill_Result>("sp_getLastBill");
+        }
+    
+        public virtual ObjectResult<Nullable<int>> sp_CheckIDPro_BillDetail(string idBill, string idPro)
+        {
+            var idBillParameter = idBill != null ?
+                new ObjectParameter("idBill", idBill) :
+                new ObjectParameter("idBill", typeof(string));
+    
+            var idProParameter = idPro != null ?
+                new ObjectParameter("idPro", idPro) :
+                new ObjectParameter("idPro", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("sp_CheckIDPro_BillDetail", idBillParameter, idProParameter);
+        }
+    
+        public virtual int sp_updateQuantityProduct(string idPro, string quantity)
+        {
+            var idProParameter = idPro != null ?
+                new ObjectParameter("idPro", idPro) :
+                new ObjectParameter("idPro", typeof(string));
+    
+            var quantityParameter = quantity != null ?
+                new ObjectParameter("quantity", quantity) :
+                new ObjectParameter("quantity", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_updateQuantityProduct", idProParameter, quantityParameter);
+        }
+    
+        public virtual int sp_updateTotalMoney(string idBill, string totalMoney)
+        {
+            var idBillParameter = idBill != null ?
+                new ObjectParameter("idBill", idBill) :
+                new ObjectParameter("idBill", typeof(string));
+    
+            var totalMoneyParameter = totalMoney != null ?
+                new ObjectParameter("totalMoney", totalMoney) :
+                new ObjectParameter("totalMoney", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_updateTotalMoney", idBillParameter, totalMoneyParameter);
+        }
+    
+        public virtual ObjectResult<string> sp_CheckIDPro_Product(string idPro)
+        {
+            var idProParameter = idPro != null ?
+                new ObjectParameter("idPro", idPro) :
+                new ObjectParameter("idPro", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("sp_CheckIDPro_Product", idProParameter);
+        }
+    
+        public virtual ObjectResult<Nullable<int>> sp_CheckIDPro_Product1(string idPro)
+        {
+            var idProParameter = idPro != null ?
+                new ObjectParameter("idPro", idPro) :
+                new ObjectParameter("idPro", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("sp_CheckIDPro_Product1", idProParameter);
+        }
     }
 }

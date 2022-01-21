@@ -29,7 +29,7 @@ namespace QuanLyNhaHangPizza_GUI.DAO_Pizza
                 s.UNITPRICEPRO,
                 s.STATUS_PRO
             }).Where(s => s.ID_CATE == "PZ").ToList();
-            
+
             return ds;
         }
 
@@ -47,6 +47,33 @@ namespace QuanLyNhaHangPizza_GUI.DAO_Pizza
             }).Where(s => s.ID_CATE == "Drink").ToList();
 
             return ds;
+        }
+
+        public bool checkProID_Product(PRODUCT p)
+        {
+            bool result = false;
+            int? exists = -1;
+
+            exists = db.sp_CheckIDPro_Product1(p.ID_PRO).FirstOrDefault();
+            if (exists == 1)
+            {
+                result = true;
+            }
+
+            return result;
+        }
+
+        public void updateQuantity(PRODUCT p)
+        {
+            db.sp_updateQuantityProduct(p.ID_PRO, p.QUANTITY);
+            db.SaveChanges();
+        }
+
+        public string getQuantity(string idPro)
+        {
+            PRODUCT product = db.PRODUCTS.Find(idPro);
+            string quantity = product.QUANTITY;
+            return quantity;
         }
     }
 }

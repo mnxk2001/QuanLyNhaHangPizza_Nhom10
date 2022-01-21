@@ -33,7 +33,6 @@ namespace QuanLyNhaHangPizza_GUI
             this.label1 = new System.Windows.Forms.Label();
             this.btnNew = new System.Windows.Forms.Button();
             this.btnOld = new System.Windows.Forms.Button();
-            this.btnExit = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -62,6 +61,7 @@ namespace QuanLyNhaHangPizza_GUI
             this.btnNew.TabIndex = 1;
             this.btnNew.Text = "Mới";
             this.btnNew.UseVisualStyleBackColor = false;
+            this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
             // 
             // btnOld
             // 
@@ -78,27 +78,12 @@ namespace QuanLyNhaHangPizza_GUI
             this.btnOld.UseVisualStyleBackColor = false;
             this.btnOld.Click += new System.EventHandler(this.btnOld_Click);
             // 
-            // btnExit
-            // 
-            this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(90)))), ((int)(((byte)(90)))));
-            this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(242)))), ((int)(((byte)(255)))));
-            this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
-            this.btnExit.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.btnExit.Location = new System.Drawing.Point(298, 299);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(179, 102);
-            this.btnExit.TabIndex = 2;
-            this.btnExit.Text = "Thoát";
-            this.btnExit.UseVisualStyleBackColor = false;
-            // 
             // f_ChooseCus
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(222)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnOld);
             this.Controls.Add(this.btnNew);
             this.Controls.Add(this.label1);
@@ -115,6 +100,5 @@ namespace QuanLyNhaHangPizza_GUI
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnNew;
         private System.Windows.Forms.Button btnOld;
-        private System.Windows.Forms.Button btnExit;
     }
 }

@@ -23,5 +23,24 @@ namespace QuanLyNhaHangPizza_GUI.BUS_Pizza
             comboBox.DisplayMember = "NAME_CUS";
             comboBox.ValueMember = "ID_CUS";
         }
+
+        public void getCustomer4Create(DataGridView dg)
+        {
+            dg.DataSource = dao_cus.getAllCustomer();
+        }
+
+        public bool addCusomer(CUSTOMER cus)
+        {
+            try
+            {
+                dao_cus.insertCusomer(cus);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+        }
     }
 }

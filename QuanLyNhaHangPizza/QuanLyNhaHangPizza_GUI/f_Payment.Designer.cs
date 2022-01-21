@@ -56,12 +56,15 @@ namespace QuanLyNhaHangPizza_GUI
             this.btnExit = new System.Windows.Forms.Button();
             this.btnPay = new System.Windows.Forms.Button();
             this.btnCancelPay = new System.Windows.Forms.Button();
-            this.btnEditPay = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.rbtnMomo = new System.Windows.Forms.RadioButton();
             this.rbtnChuyenKhoan = new System.Windows.Forms.RadioButton();
             this.rbtnTienMat = new System.Windows.Forms.RadioButton();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lbTotalMoney = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtBillID_New = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.lbFloor = new System.Windows.Forms.Label();
             this.cbEmp_Name = new System.Windows.Forms.ComboBox();
             this.cbCus_Name = new System.Windows.Forms.ComboBox();
@@ -76,6 +79,17 @@ namespace QuanLyNhaHangPizza_GUI
             this.lbTable = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.flpDrink = new System.Windows.Forms.FlowLayoutPanel();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.txtIdProduct = new System.Windows.Forms.TextBox();
+            this.txtIntoMoney = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.numQuantity = new System.Windows.Forms.NumericUpDown();
+            this.txtUnitPrice = new System.Windows.Forms.TextBox();
+            this.txtProductName = new System.Windows.Forms.TextBox();
+            this.btnConfirm = new System.Windows.Forms.Button();
+            this.btnEditPro = new System.Windows.Forms.Button();
+            this.btnDeletePro = new System.Windows.Forms.Button();
+            this.btnRefesh = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupF2.SuspendLayout();
             this.flpF2.SuspendLayout();
@@ -88,6 +102,8 @@ namespace QuanLyNhaHangPizza_GUI
             ((System.ComponentModel.ISupportInitialize)(this.gridProduct)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox4.SuspendLayout();
+            this.groupBox6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numQuantity)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -101,7 +117,7 @@ namespace QuanLyNhaHangPizza_GUI
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox1.Size = new System.Drawing.Size(371, 822);
+            this.groupBox1.Size = new System.Drawing.Size(371, 799);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "CHỌN BÀN";
@@ -111,9 +127,9 @@ namespace QuanLyNhaHangPizza_GUI
             this.groupF2.Controls.Add(this.flpF2);
             this.groupF2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.groupF2.ForeColor = System.Drawing.Color.White;
-            this.groupF2.Location = new System.Drawing.Point(3, 504);
+            this.groupF2.Location = new System.Drawing.Point(3, 446);
             this.groupF2.Name = "groupF2";
-            this.groupF2.Size = new System.Drawing.Size(365, 314);
+            this.groupF2.Size = new System.Drawing.Size(365, 349);
             this.groupF2.TabIndex = 4;
             this.groupF2.TabStop = false;
             this.groupF2.Text = "Tầng 2";
@@ -223,7 +239,7 @@ namespace QuanLyNhaHangPizza_GUI
             this.groupF1.ForeColor = System.Drawing.Color.White;
             this.groupF1.Location = new System.Drawing.Point(3, 28);
             this.groupF1.Name = "groupF1";
-            this.groupF1.Size = new System.Drawing.Size(365, 437);
+            this.groupF1.Size = new System.Drawing.Size(365, 386);
             this.groupF1.TabIndex = 3;
             this.groupF1.TabStop = false;
             this.groupF1.Text = "Tầng 1";
@@ -378,9 +394,9 @@ namespace QuanLyNhaHangPizza_GUI
             this.groupBox2.Controls.Add(this.flpPizza);
             this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.Color.White;
-            this.groupBox2.Location = new System.Drawing.Point(377, 13);
+            this.groupBox2.Location = new System.Drawing.Point(377, 0);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(342, 452);
+            this.groupBox2.Size = new System.Drawing.Size(762, 328);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "PIZZA";
@@ -391,7 +407,7 @@ namespace QuanLyNhaHangPizza_GUI
             this.flpPizza.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flpPizza.Location = new System.Drawing.Point(3, 27);
             this.flpPizza.Name = "flpPizza";
-            this.flpPizza.Size = new System.Drawing.Size(336, 422);
+            this.flpPizza.Size = new System.Drawing.Size(756, 298);
             this.flpPizza.TabIndex = 0;
             // 
             // groupBox3
@@ -399,28 +415,29 @@ namespace QuanLyNhaHangPizza_GUI
             this.groupBox3.Controls.Add(this.btnExit);
             this.groupBox3.Controls.Add(this.btnPay);
             this.groupBox3.Controls.Add(this.btnCancelPay);
-            this.groupBox3.Controls.Add(this.btnEditPay);
             this.groupBox3.Controls.Add(this.groupBox5);
             this.groupBox3.Controls.Add(this.panel1);
             this.groupBox3.Dock = System.Windows.Forms.DockStyle.Right;
             this.groupBox3.Font = new System.Drawing.Font("Segoe UI", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.ForeColor = System.Drawing.Color.White;
-            this.groupBox3.Location = new System.Drawing.Point(725, 0);
+            this.groupBox3.Location = new System.Drawing.Point(1145, 0);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(461, 822);
+            this.groupBox3.Size = new System.Drawing.Size(442, 799);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "THANH TOÁN";
             // 
             // btnExit
             // 
+            this.btnExit.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(218)))), ((int)(((byte)(141)))));
+            this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnExit.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
             this.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExit.Location = new System.Drawing.Point(239, 764);
+            this.btnExit.Location = new System.Drawing.Point(6, 747);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(216, 46);
+            this.btnExit.Size = new System.Drawing.Size(213, 46);
             this.btnExit.TabIndex = 3;
             this.btnExit.Text = "Thoát";
             this.btnExit.UseVisualStyleBackColor = false;
@@ -428,45 +445,35 @@ namespace QuanLyNhaHangPizza_GUI
             // 
             // btnPay
             // 
+            this.btnPay.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnPay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(218)))), ((int)(((byte)(141)))));
             this.btnPay.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnPay.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPay.Image = ((System.Drawing.Image)(resources.GetObject("btnPay.Image")));
             this.btnPay.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPay.Location = new System.Drawing.Point(239, 710);
+            this.btnPay.Location = new System.Drawing.Point(233, 692);
             this.btnPay.Name = "btnPay";
-            this.btnPay.Size = new System.Drawing.Size(216, 48);
+            this.btnPay.Size = new System.Drawing.Size(203, 95);
             this.btnPay.TabIndex = 2;
             this.btnPay.Text = "THANH TOÁN";
             this.btnPay.UseVisualStyleBackColor = false;
+            this.btnPay.Click += new System.EventHandler(this.btnPay_Click);
             // 
             // btnCancelPay
             // 
+            this.btnCancelPay.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCancelPay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(218)))), ((int)(((byte)(141)))));
             this.btnCancelPay.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCancelPay.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelPay.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelPay.Image")));
             this.btnCancelPay.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancelPay.Location = new System.Drawing.Point(6, 710);
+            this.btnCancelPay.Location = new System.Drawing.Point(6, 690);
             this.btnCancelPay.Name = "btnCancelPay";
-            this.btnCancelPay.Size = new System.Drawing.Size(227, 48);
+            this.btnCancelPay.Size = new System.Drawing.Size(213, 48);
             this.btnCancelPay.TabIndex = 2;
             this.btnCancelPay.Text = "HỦY THANH TOÁN";
             this.btnCancelPay.UseVisualStyleBackColor = false;
-            // 
-            // btnEditPay
-            // 
-            this.btnEditPay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(218)))), ((int)(((byte)(141)))));
-            this.btnEditPay.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEditPay.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditPay.Image = ((System.Drawing.Image)(resources.GetObject("btnEditPay.Image")));
-            this.btnEditPay.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEditPay.Location = new System.Drawing.Point(6, 764);
-            this.btnEditPay.Name = "btnEditPay";
-            this.btnEditPay.Size = new System.Drawing.Size(227, 48);
-            this.btnEditPay.TabIndex = 2;
-            this.btnEditPay.Text = "SỬA HÓA ĐƠN";
-            this.btnEditPay.UseVisualStyleBackColor = false;
+            this.btnCancelPay.Click += new System.EventHandler(this.btnCancelPay_Click);
             // 
             // groupBox5
             // 
@@ -474,9 +481,9 @@ namespace QuanLyNhaHangPizza_GUI
             this.groupBox5.Controls.Add(this.rbtnChuyenKhoan);
             this.groupBox5.Controls.Add(this.rbtnTienMat);
             this.groupBox5.ForeColor = System.Drawing.Color.White;
-            this.groupBox5.Location = new System.Drawing.Point(6, 572);
+            this.groupBox5.Location = new System.Drawing.Point(6, 552);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(449, 132);
+            this.groupBox5.Size = new System.Drawing.Size(430, 132);
             this.groupBox5.TabIndex = 1;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Phương thức thanh toán";
@@ -520,6 +527,10 @@ namespace QuanLyNhaHangPizza_GUI
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.lbTotalMoney);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.txtBillID_New);
+            this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.lbFloor);
             this.panel1.Controls.Add(this.cbEmp_Name);
             this.panel1.Controls.Add(this.cbCus_Name);
@@ -532,18 +543,58 @@ namespace QuanLyNhaHangPizza_GUI
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.lbTable);
-            this.panel1.ForeColor = System.Drawing.Color.White;
+            this.panel1.ForeColor = System.Drawing.Color.Black;
             this.panel1.Location = new System.Drawing.Point(6, 28);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(449, 538);
+            this.panel1.Size = new System.Drawing.Size(430, 518);
             this.panel1.TabIndex = 0;
+            // 
+            // lbTotalMoney
+            // 
+            this.lbTotalMoney.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(218)))), ((int)(((byte)(141)))));
+            this.lbTotalMoney.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTotalMoney.ForeColor = System.Drawing.Color.White;
+            this.lbTotalMoney.Location = new System.Drawing.Point(240, 464);
+            this.lbTotalMoney.Name = "lbTotalMoney";
+            this.lbTotalMoney.Size = new System.Drawing.Size(184, 48);
+            this.lbTotalMoney.TabIndex = 11;
+            this.lbTotalMoney.Text = "0";
+            this.lbTotalMoney.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Orange;
+            this.label3.Location = new System.Drawing.Point(52, 475);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(182, 37);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "THÀNH TIỀN";
+            // 
+            // txtBillID_New
+            // 
+            this.txtBillID_New.Location = new System.Drawing.Point(240, 66);
+            this.txtBillID_New.Name = "txtBillID_New";
+            this.txtBillID_New.Size = new System.Drawing.Size(126, 31);
+            this.txtBillID_New.TabIndex = 9;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(152, 69);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(82, 25);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "Mã đơn:";
             // 
             // lbFloor
             // 
             this.lbFloor.AutoSize = true;
             this.lbFloor.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbFloor.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.lbFloor.Location = new System.Drawing.Point(187, 12);
+            this.lbFloor.Location = new System.Drawing.Point(146, 9);
             this.lbFloor.Name = "lbFloor";
             this.lbFloor.Size = new System.Drawing.Size(107, 41);
             this.lbFloor.TabIndex = 7;
@@ -552,7 +603,7 @@ namespace QuanLyNhaHangPizza_GUI
             // cbEmp_Name
             // 
             this.cbEmp_Name.FormattingEnabled = true;
-            this.cbEmp_Name.Location = new System.Drawing.Point(177, 225);
+            this.cbEmp_Name.Location = new System.Drawing.Point(178, 169);
             this.cbEmp_Name.Name = "cbEmp_Name";
             this.cbEmp_Name.Size = new System.Drawing.Size(221, 31);
             this.cbEmp_Name.TabIndex = 6;
@@ -560,7 +611,7 @@ namespace QuanLyNhaHangPizza_GUI
             // cbCus_Name
             // 
             this.cbCus_Name.FormattingEnabled = true;
-            this.cbCus_Name.Location = new System.Drawing.Point(177, 191);
+            this.cbCus_Name.Location = new System.Drawing.Point(178, 135);
             this.cbCus_Name.Name = "cbCus_Name";
             this.cbCus_Name.Size = new System.Drawing.Size(221, 31);
             this.cbCus_Name.TabIndex = 6;
@@ -573,7 +624,7 @@ namespace QuanLyNhaHangPizza_GUI
             this.dtpDateFounded.CalendarTrailingForeColor = System.Drawing.Color.White;
             this.dtpDateFounded.Enabled = false;
             this.dtpDateFounded.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDateFounded.Location = new System.Drawing.Point(177, 157);
+            this.dtpDateFounded.Location = new System.Drawing.Point(178, 101);
             this.dtpDateFounded.Name = "dtpDateFounded";
             this.dtpDateFounded.Size = new System.Drawing.Size(221, 31);
             this.dtpDateFounded.TabIndex = 5;
@@ -583,17 +634,19 @@ namespace QuanLyNhaHangPizza_GUI
             this.gridProduct.BackgroundColor = System.Drawing.Color.White;
             this.gridProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridProduct.GridColor = System.Drawing.Color.Black;
-            this.gridProduct.Location = new System.Drawing.Point(25, 291);
+            this.gridProduct.Location = new System.Drawing.Point(0, 235);
             this.gridProduct.Name = "gridProduct";
             this.gridProduct.RowHeadersWidth = 51;
             this.gridProduct.RowTemplate.Height = 24;
-            this.gridProduct.Size = new System.Drawing.Size(418, 237);
+            this.gridProduct.Size = new System.Drawing.Size(424, 207);
             this.gridProduct.TabIndex = 4;
+            this.gridProduct.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridProduct_CellDoubleClick);
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(20, 263);
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(21, 207);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(101, 25);
             this.label8.TabIndex = 3;
@@ -602,7 +655,8 @@ namespace QuanLyNhaHangPizza_GUI
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(20, 229);
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(21, 173);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(139, 25);
             this.label7.TabIndex = 3;
@@ -611,7 +665,8 @@ namespace QuanLyNhaHangPizza_GUI
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(20, 193);
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(21, 137);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(151, 25);
             this.label6.TabIndex = 3;
@@ -620,7 +675,8 @@ namespace QuanLyNhaHangPizza_GUI
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(20, 160);
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(21, 104);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(93, 25);
             this.label5.TabIndex = 3;
@@ -629,7 +685,7 @@ namespace QuanLyNhaHangPizza_GUI
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(111, 87);
+            this.label4.Location = new System.Drawing.Point(117, 61);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(0, 25);
             this.label4.TabIndex = 2;
@@ -638,9 +694,9 @@ namespace QuanLyNhaHangPizza_GUI
             // 
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(25, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(20, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(153, 128);
+            this.pictureBox1.Size = new System.Drawing.Size(120, 92);
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
@@ -649,7 +705,7 @@ namespace QuanLyNhaHangPizza_GUI
             this.lbTable.AutoSize = true;
             this.lbTable.Font = new System.Drawing.Font("Segoe UI", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTable.ForeColor = System.Drawing.Color.Gold;
-            this.lbTable.Location = new System.Drawing.Point(184, 83);
+            this.lbTable.Location = new System.Drawing.Point(288, 9);
             this.lbTable.Name = "lbTable";
             this.lbTable.Size = new System.Drawing.Size(136, 57);
             this.lbTable.TabIndex = 0;
@@ -663,9 +719,9 @@ namespace QuanLyNhaHangPizza_GUI
             this.groupBox4.Controls.Add(this.flpDrink);
             this.groupBox4.Font = new System.Drawing.Font("Segoe UI", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox4.ForeColor = System.Drawing.Color.White;
-            this.groupBox4.Location = new System.Drawing.Point(377, 478);
+            this.groupBox4.Location = new System.Drawing.Point(374, 516);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(342, 344);
+            this.groupBox4.Size = new System.Drawing.Size(765, 279);
             this.groupBox4.TabIndex = 1;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "ĐỒ UỐNG";
@@ -673,18 +729,179 @@ namespace QuanLyNhaHangPizza_GUI
             // flpDrink
             // 
             this.flpDrink.AutoScroll = true;
+            this.flpDrink.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.flpDrink.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flpDrink.Location = new System.Drawing.Point(3, 27);
             this.flpDrink.Name = "flpDrink";
-            this.flpDrink.Size = new System.Drawing.Size(336, 314);
+            this.flpDrink.Size = new System.Drawing.Size(759, 249);
             this.flpDrink.TabIndex = 0;
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox6.Controls.Add(this.txtIdProduct);
+            this.groupBox6.Controls.Add(this.txtIntoMoney);
+            this.groupBox6.Controls.Add(this.label1);
+            this.groupBox6.Controls.Add(this.numQuantity);
+            this.groupBox6.Controls.Add(this.txtUnitPrice);
+            this.groupBox6.Controls.Add(this.txtProductName);
+            this.groupBox6.Font = new System.Drawing.Font("Segoe UI", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox6.ForeColor = System.Drawing.Color.White;
+            this.groupBox6.Location = new System.Drawing.Point(374, 334);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(762, 111);
+            this.groupBox6.TabIndex = 1;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Thông tin";
+            // 
+            // txtIdProduct
+            // 
+            this.txtIdProduct.Enabled = false;
+            this.txtIdProduct.Location = new System.Drawing.Point(15, 30);
+            this.txtIdProduct.Name = "txtIdProduct";
+            this.txtIdProduct.Size = new System.Drawing.Size(91, 31);
+            this.txtIdProduct.TabIndex = 5;
+            // 
+            // txtIntoMoney
+            // 
+            this.txtIntoMoney.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtIntoMoney.Enabled = false;
+            this.txtIntoMoney.Location = new System.Drawing.Point(615, 66);
+            this.txtIntoMoney.Name = "txtIntoMoney";
+            this.txtIntoMoney.Size = new System.Drawing.Size(144, 31);
+            this.txtIntoMoney.TabIndex = 4;
+            this.txtIntoMoney.Text = "0";
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(519, 72);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(99, 25);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Tổng tiền:";
+            // 
+            // numQuantity
+            // 
+            this.numQuantity.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.numQuantity.Location = new System.Drawing.Point(615, 31);
+            this.numQuantity.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numQuantity.Name = "numQuantity";
+            this.numQuantity.Size = new System.Drawing.Size(144, 31);
+            this.numQuantity.TabIndex = 2;
+            this.numQuantity.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numQuantity.ValueChanged += new System.EventHandler(this.numQuantity_ValueChanged);
+            // 
+            // txtUnitPrice
+            // 
+            this.txtUnitPrice.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtUnitPrice.Enabled = false;
+            this.txtUnitPrice.Location = new System.Drawing.Point(15, 66);
+            this.txtUnitPrice.Name = "txtUnitPrice";
+            this.txtUnitPrice.Size = new System.Drawing.Size(498, 31);
+            this.txtUnitPrice.TabIndex = 1;
+            // 
+            // txtProductName
+            // 
+            this.txtProductName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtProductName.Enabled = false;
+            this.txtProductName.Location = new System.Drawing.Point(112, 30);
+            this.txtProductName.Name = "txtProductName";
+            this.txtProductName.Size = new System.Drawing.Size(483, 31);
+            this.txtProductName.TabIndex = 0;
+            // 
+            // btnConfirm
+            // 
+            this.btnConfirm.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnConfirm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(218)))), ((int)(((byte)(141)))));
+            this.btnConfirm.Font = new System.Drawing.Font("Segoe UI", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfirm.ForeColor = System.Drawing.Color.White;
+            this.btnConfirm.Image = ((System.Drawing.Image)(resources.GetObject("btnConfirm.Image")));
+            this.btnConfirm.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnConfirm.Location = new System.Drawing.Point(1003, 462);
+            this.btnConfirm.Name = "btnConfirm";
+            this.btnConfirm.Size = new System.Drawing.Size(133, 44);
+            this.btnConfirm.TabIndex = 3;
+            this.btnConfirm.Text = "   XÁC NHẬN";
+            this.btnConfirm.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnConfirm.UseVisualStyleBackColor = false;
+            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
+            // 
+            // btnEditPro
+            // 
+            this.btnEditPro.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnEditPro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(218)))), ((int)(((byte)(141)))));
+            this.btnEditPro.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEditPro.Font = new System.Drawing.Font("Segoe UI", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditPro.ForeColor = System.Drawing.Color.White;
+            this.btnEditPro.Image = ((System.Drawing.Image)(resources.GetObject("btnEditPro.Image")));
+            this.btnEditPro.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEditPro.Location = new System.Drawing.Point(864, 462);
+            this.btnEditPro.Name = "btnEditPro";
+            this.btnEditPro.Size = new System.Drawing.Size(133, 44);
+            this.btnEditPro.TabIndex = 3;
+            this.btnEditPro.Text = "   SỬA";
+            this.btnEditPro.UseVisualStyleBackColor = false;
+            this.btnEditPro.Click += new System.EventHandler(this.btnEditPro_Click);
+            // 
+            // btnDeletePro
+            // 
+            this.btnDeletePro.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnDeletePro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(218)))), ((int)(((byte)(141)))));
+            this.btnDeletePro.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDeletePro.Font = new System.Drawing.Font("Segoe UI", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeletePro.ForeColor = System.Drawing.Color.White;
+            this.btnDeletePro.Image = ((System.Drawing.Image)(resources.GetObject("btnDeletePro.Image")));
+            this.btnDeletePro.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDeletePro.Location = new System.Drawing.Point(725, 462);
+            this.btnDeletePro.Name = "btnDeletePro";
+            this.btnDeletePro.Size = new System.Drawing.Size(133, 44);
+            this.btnDeletePro.TabIndex = 3;
+            this.btnDeletePro.Text = "   XÓA";
+            this.btnDeletePro.UseVisualStyleBackColor = false;
+            this.btnDeletePro.Click += new System.EventHandler(this.btnDeletePro_Click_1);
+            // 
+            // btnRefesh
+            // 
+            this.btnRefesh.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnRefesh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(218)))), ((int)(((byte)(141)))));
+            this.btnRefesh.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRefesh.Font = new System.Drawing.Font("Segoe UI", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRefesh.ForeColor = System.Drawing.Color.White;
+            this.btnRefesh.Image = ((System.Drawing.Image)(resources.GetObject("btnRefesh.Image")));
+            this.btnRefesh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRefesh.Location = new System.Drawing.Point(586, 462);
+            this.btnRefesh.Name = "btnRefesh";
+            this.btnRefesh.Size = new System.Drawing.Size(133, 44);
+            this.btnRefesh.TabIndex = 3;
+            this.btnRefesh.Text = "   LÀM MỚI";
+            this.btnRefesh.UseVisualStyleBackColor = false;
+            this.btnRefesh.Click += new System.EventHandler(this.btnRefesh_Click);
             // 
             // f_Payment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(95)))), ((int)(((byte)(82)))));
-            this.ClientSize = new System.Drawing.Size(1186, 822);
+            this.ClientSize = new System.Drawing.Size(1587, 799);
+            this.Controls.Add(this.btnRefesh);
+            this.Controls.Add(this.btnDeletePro);
+            this.Controls.Add(this.btnEditPro);
+            this.Controls.Add(this.btnConfirm);
+            this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox2);
@@ -710,6 +927,9 @@ namespace QuanLyNhaHangPizza_GUI
             ((System.ComponentModel.ISupportInitialize)(this.gridProduct)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox4.ResumeLayout(false);
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numQuantity)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -751,7 +971,6 @@ namespace QuanLyNhaHangPizza_GUI
         private System.Windows.Forms.Label lbTable;
         private System.Windows.Forms.Button btnPay;
         private System.Windows.Forms.Button btnCancelPay;
-        private System.Windows.Forms.Button btnEditPay;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.RadioButton rbtnMomo;
         private System.Windows.Forms.RadioButton rbtnChuyenKhoan;
@@ -762,5 +981,20 @@ namespace QuanLyNhaHangPizza_GUI
         private System.Windows.Forms.GroupBox groupF2;
         private System.Windows.Forms.GroupBox groupF1;
         private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.NumericUpDown numQuantity;
+        private System.Windows.Forms.TextBox txtUnitPrice;
+        private System.Windows.Forms.TextBox txtProductName;
+        private System.Windows.Forms.TextBox txtIntoMoney;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnConfirm;
+        private System.Windows.Forms.TextBox txtBillID_New;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtIdProduct;
+        private System.Windows.Forms.Button btnEditPro;
+        private System.Windows.Forms.Button btnDeletePro;
+        private System.Windows.Forms.Label lbTotalMoney;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnRefesh;
     }
 }

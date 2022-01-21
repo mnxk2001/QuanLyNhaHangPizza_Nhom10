@@ -23,3 +23,5 @@ D:\LTCSDL\QuanLyNhaHangPizza_Nhom10\QuanLyNhaHangPizza\QuanLyNhaHangPizza_GUI\ob
 D:\LTCSDL\QuanLyNhaHangPizza_Nhom10\QuanLyNhaHangPizza\QuanLyNhaHangPizza_GUI\obj\Debug\QuanLyNhaHangPizza_GUI.f_Payment.resources
 D:\LTCSDL\QuanLyNhaHangPizza_Nhom10\QuanLyNhaHangPizza\QuanLyNhaHangPizza_GUI\obj\Debug\QuanLyNhaHangPizza_GUI.f_SchelWork_Emp.resources
 D:\LTCSDL\QuanLyNhaHangPizza_Nhom10\QuanLyNhaHangPizza\QuanLyNhaHangPizza_GUI\obj\Debug\QuanLyNhaHangPizza_GUI.csproj.AssemblyReference.cache
+D:\LTCSDL\QuanLyNhaHangPizza_Nhom10\QuanLyNhaHangPizza\QuanLyNhaHangPizza_GUI\obj\Debug\QuanLyNhaHangPizza_GUI.f_Bill.resources
+D:\LTCSDL\QuanLyNhaHangPizza_Nhom10\QuanLyNhaHangPizza\QuanLyNhaHangPizza_GUI\obj\Debug\QuanLyNhaHangPizza_GUI.f_AddCus.resources

@@ -90,5 +90,21 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_getLastBill" FunctionName="QLBANHANGPIZZAModel.Store.sp_getLastBill">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QLBANHANGPIZZAModel.sp_getLastBill_Result">
+          <ScalarProperty Name="ID_Bill" ColumnName="ID_Bill" />
+          <ScalarProperty Name="ID_Cus" ColumnName="ID_Cus" />
+          <ScalarProperty Name="ID_Emp" ColumnName="ID_Emp" />
+          <ScalarProperty Name="DateFounded" ColumnName="DateFounded" />
+          <ScalarProperty Name="TotalMoney" ColumnName="TotalMoney" />
+          <ScalarProperty Name="BillNotes" ColumnName="BillNotes" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_CheckIDPro_BillDetail" FunctionName="QLBANHANGPIZZAModel.Store.sp_CheckIDPro_BillDetail" />
+    <FunctionImportMapping FunctionImportName="sp_updateQuantityProduct" FunctionName="QLBANHANGPIZZAModel.Store.sp_updateQuantityProduct" />
+    <FunctionImportMapping FunctionImportName="sp_updateTotalMoney" FunctionName="QLBANHANGPIZZAModel.Store.sp_updateTotalMoney" />
+    <FunctionImportMapping FunctionImportName="sp_CheckIDPro_Product1" FunctionName="QLBANHANGPIZZAModel.Store.sp_CheckIDPro_Product" />
   </EntityContainerMapping>
 </Mapping>

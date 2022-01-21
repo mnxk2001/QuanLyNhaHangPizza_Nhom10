@@ -17,8 +17,8 @@
     <Property Name="ID_Cus" Type="String" MaxLength="11" FixedLength="true" Unicode="false" Nullable="false" />
     <Property Name="ID_Emp" Type="String" MaxLength="11" FixedLength="true" Unicode="false" Nullable="false" />
     <Property Name="DateFounded" Type="DateTime" Nullable="false" Precision="0" />
-    <Property Name="TotalMoney" Type="String" MaxLength="11" FixedLength="true" Unicode="false" Nullable="false" />
-    <Property Name="BillNotes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TotalMoney" Type="String" MaxLength="11" FixedLength="true" Unicode="false" />
+    <Property Name="BillNotes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="CUSTOMER" Relationship="Self.FK_Bill_Cus" FromRole="BILL" ToRole="CUSTOMER" />
     <NavigationProperty Name="EMPLOYEE" Relationship="Self.FK_Bill_Emp" FromRole="BILL" ToRole="EMPLOYEE" />
     <NavigationProperty Name="BILLDETAILs" Relationship="Self.FK_BILLDETAIL_BILL" FromRole="BILL" ToRole="BILLDETAIL" />
@@ -217,5 +217,39 @@
       <End Role="EMPLOYEE" EntitySet="EMPLOYEEs" />
       <End Role="EMPLOYEE_WORK" EntitySet="EMPLOYEE_WORK" />
     </AssociationSet>
+    <FunctionImport Name="sp_insertBillDetail">
+      <Parameter Name="idBill" Mode="In" Type="String" />
+      <Parameter Name="idPro" Mode="In" Type="String" />
+      <Parameter Name="qtt" Mode="In" Type="String" />
+      <Parameter Name="unitPrice" Mode="In" Type="String" />
+      <Parameter Name="intoMoney" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_getLastBill" ReturnType="Collection(QLBANHANGPIZZAModel.sp_getLastBill_Result)" />
+    <FunctionImport Name="sp_CheckIDPro_BillDetail" ReturnType="Collection(Int32)">
+      <Parameter Name="idBill" Mode="In" Type="String" />
+      <Parameter Name="idPro" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_updateQuantityProduct">
+      <Parameter Name="idPro" Mode="In" Type="String" />
+      <Parameter Name="quantity" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_updateTotalMoney">
+      <Parameter Name="idBill" Mode="In" Type="String" />
+      <Parameter Name="totalMoney" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_CheckIDPro_Product" ReturnType="Collection(String)">
+      <Parameter Name="idPro" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_CheckIDPro_Product1" ReturnType="Collection(Int32)">
+      <Parameter Name="idPro" Mode="In" Type="String" />
+    </FunctionImport>
   </EntityContainer>
+  <ComplexType Name="sp_getLastBill_Result">
+    <Property Type="String" Name="ID_Bill" Nullable="false" MaxLength="11" />
+    <Property Type="String" Name="ID_Cus" Nullable="false" MaxLength="11" />
+    <Property Type="String" Name="ID_Emp" Nullable="false" MaxLength="11" />
+    <Property Type="DateTime" Name="DateFounded" Nullable="false" />
+    <Property Type="String" Name="TotalMoney" Nullable="true" MaxLength="11" />
+    <Property Type="String" Name="BillNotes" Nullable="true" MaxLength="Max" />
+  </ComplexType>
 </Schema>
