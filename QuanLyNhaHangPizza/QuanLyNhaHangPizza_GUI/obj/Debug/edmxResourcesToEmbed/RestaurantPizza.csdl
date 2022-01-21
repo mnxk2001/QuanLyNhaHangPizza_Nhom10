@@ -17,8 +17,8 @@
     <Property Name="ID_Cus" Type="String" MaxLength="11" FixedLength="true" Unicode="false" Nullable="false" />
     <Property Name="ID_Emp" Type="String" MaxLength="11" FixedLength="true" Unicode="false" Nullable="false" />
     <Property Name="DateFounded" Type="DateTime" Nullable="false" Precision="0" />
-    <Property Name="TotalMoney" Type="String" MaxLength="11" FixedLength="true" Unicode="false" Nullable="false" />
-    <Property Name="BillNotes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TotalMoney" Type="String" MaxLength="11" FixedLength="true" Unicode="false" />
+    <Property Name="BillNotes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="CUSTOMER" Relationship="Self.FK_Bill_Cus" FromRole="BILL" ToRole="CUSTOMER" />
     <NavigationProperty Name="EMPLOYEE" Relationship="Self.FK_Bill_Emp" FromRole="BILL" ToRole="EMPLOYEE" />
     <NavigationProperty Name="BILLDETAILs" Relationship="Self.FK_BILLDETAIL_BILL" FromRole="BILL" ToRole="BILLDETAIL" />
@@ -217,5 +217,45 @@
       <End Role="EMPLOYEE" EntitySet="EMPLOYEEs" />
       <End Role="EMPLOYEE_WORK" EntitySet="EMPLOYEE_WORK" />
     </AssociationSet>
+    <FunctionImport Name="sp_EditEMP">
+      <Parameter Name="ID_PRO" Mode="In" Type="String" />
+      <Parameter Name="NAMEPRO" Mode="In" Type="String" />
+      <Parameter Name="ID_CATE" Mode="In" Type="String" />
+      <Parameter Name="QUANTITY" Mode="In" Type="String" />
+      <Parameter Name="UNIT" Mode="In" Type="String" />
+      <Parameter Name="PICTURE" Mode="In" Type="String" />
+      <Parameter Name="UNITPRICEPRO" Mode="In" Type="String" />
+      <Parameter Name="STATUS_PRO" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_getLastProduct" ReturnType="Collection(QLBANHANGPIZZAModel.sp_getLastProduct_Result)" />
+    <FunctionImport Name="sp_CheckIDPro_Product" ReturnType="Collection(Int32)">
+      <Parameter Name="namePro" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_CheckNamePro_Product" ReturnType="Collection(Int32)">
+      <Parameter Name="namePro" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_TimKiem" ReturnType="Collection(QLBANHANGPIZZAModel.sp_TimKiem_Result)">
+      <Parameter Name="chuoi" Mode="In" Type="String" />
+    </FunctionImport>
   </EntityContainer>
+  <ComplexType Name="sp_getLastProduct_Result">
+    <Property Type="String" Name="ID_PRO" Nullable="false" MaxLength="11" />
+    <Property Type="String" Name="NAMEPRO" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="ID_CATE" Nullable="false" MaxLength="11" />
+    <Property Type="String" Name="QUANTITY" Nullable="false" MaxLength="11" />
+    <Property Type="String" Name="UNIT" Nullable="false" MaxLength="5" />
+    <Property Type="String" Name="PICTURE" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="UNITPRICEPRO" Nullable="false" MaxLength="11" />
+    <Property Type="String" Name="STATUS_PRO" Nullable="true" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="sp_TimKiem_Result">
+    <Property Type="String" Name="ID_PRO" Nullable="false" MaxLength="11" />
+    <Property Type="String" Name="NAMEPRO" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="ID_CATE" Nullable="false" MaxLength="11" />
+    <Property Type="String" Name="QUANTITY" Nullable="false" MaxLength="11" />
+    <Property Type="String" Name="UNIT" Nullable="false" MaxLength="5" />
+    <Property Type="String" Name="PICTURE" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="UNITPRICEPRO" Nullable="false" MaxLength="11" />
+    <Property Type="String" Name="STATUS_PRO" Nullable="true" MaxLength="100" />
+  </ComplexType>
 </Schema>

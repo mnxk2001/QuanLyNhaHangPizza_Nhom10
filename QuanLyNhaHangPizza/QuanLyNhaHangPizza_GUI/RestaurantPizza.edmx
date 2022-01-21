@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="QLBANHANGPIZZAModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="QLBANHANGPIZZAModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="ACCOUNT">
           <Key>
             <PropertyRef Name="ID_User" />
@@ -21,8 +21,8 @@
           <Property Name="ID_Cus" Type="char" MaxLength="11" Nullable="false" />
           <Property Name="ID_Emp" Type="char" MaxLength="11" Nullable="false" />
           <Property Name="DateFounded" Type="date" Nullable="false" />
-          <Property Name="TotalMoney" Type="char" MaxLength="11" Nullable="false" />
-          <Property Name="BillNotes" Type="ntext" Nullable="false" />
+          <Property Name="TotalMoney" Type="char" MaxLength="11" />
+          <Property Name="BillNotes" Type="ntext" />
         </EntityType>
         <EntityType Name="BILLDETAIL">
           <Key>
@@ -171,6 +171,26 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="sp_CheckIDPro_Product" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="namePro" Type="char" Mode="In" />
+        </Function>
+        <Function Name="sp_CheckNamePro_Product" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="namePro" Type="char" Mode="In" />
+        </Function>
+        <Function Name="sp_EditEMP" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID_PRO" Type="char" Mode="In" />
+          <Parameter Name="NAMEPRO" Type="nvarchar" Mode="In" />
+          <Parameter Name="ID_CATE" Type="char" Mode="In" />
+          <Parameter Name="QUANTITY" Type="char" Mode="In" />
+          <Parameter Name="UNIT" Type="nvarchar" Mode="In" />
+          <Parameter Name="PICTURE" Type="varchar" Mode="In" />
+          <Parameter Name="UNITPRICEPRO" Type="char" Mode="In" />
+          <Parameter Name="STATUS_PRO" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="sp_getLastProduct" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="sp_TimKiem" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="chuoi" Type="nvarchar" Mode="In" />
+        </Function>
         <EntityContainer Name="QLBANHANGPIZZAModelStoreContainer">
           <EntitySet Name="ACCOUNT" EntityType="Self.ACCOUNT" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="BILL" EntityType="Self.BILL" Schema="dbo" store:Type="Tables" />
@@ -209,8 +229,7 @@
             <End Role="PRODUCTS" EntitySet="PRODUCTS" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="QLBANHANGPIZZAModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -231,8 +250,8 @@
           <Property Name="ID_Cus" Type="String" MaxLength="11" FixedLength="true" Unicode="false" Nullable="false" />
           <Property Name="ID_Emp" Type="String" MaxLength="11" FixedLength="true" Unicode="false" Nullable="false" />
           <Property Name="DateFounded" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="TotalMoney" Type="String" MaxLength="11" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="BillNotes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TotalMoney" Type="String" MaxLength="11" FixedLength="true" Unicode="false" />
+          <Property Name="BillNotes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="CUSTOMER" Relationship="Self.FK_Bill_Cus" FromRole="BILL" ToRole="CUSTOMER" />
           <NavigationProperty Name="EMPLOYEE" Relationship="Self.FK_Bill_Emp" FromRole="BILL" ToRole="EMPLOYEE" />
           <NavigationProperty Name="BILLDETAILs" Relationship="Self.FK_BILLDETAIL_BILL" FromRole="BILL" ToRole="BILLDETAIL" />
@@ -431,7 +450,47 @@
             <End Role="EMPLOYEE" EntitySet="EMPLOYEEs" />
             <End Role="EMPLOYEE_WORK" EntitySet="EMPLOYEE_WORK" />
           </AssociationSet>
+          <FunctionImport Name="sp_EditEMP">
+            <Parameter Name="ID_PRO" Mode="In" Type="String" />
+            <Parameter Name="NAMEPRO" Mode="In" Type="String" />
+            <Parameter Name="ID_CATE" Mode="In" Type="String" />
+            <Parameter Name="QUANTITY" Mode="In" Type="String" />
+            <Parameter Name="UNIT" Mode="In" Type="String" />
+            <Parameter Name="PICTURE" Mode="In" Type="String" />
+            <Parameter Name="UNITPRICEPRO" Mode="In" Type="String" />
+            <Parameter Name="STATUS_PRO" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_getLastProduct" ReturnType="Collection(QLBANHANGPIZZAModel.sp_getLastProduct_Result)" />
+          <FunctionImport Name="sp_CheckIDPro_Product" ReturnType="Collection(Int32)">
+          <Parameter Name="namePro" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_CheckNamePro_Product" ReturnType="Collection(Int32)">
+          <Parameter Name="namePro" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_TimKiem" ReturnType="Collection(QLBANHANGPIZZAModel.sp_TimKiem_Result)">
+            <Parameter Name="chuoi" Mode="In" Type="String" />
+          </FunctionImport>
         </EntityContainer>
+        <ComplexType Name="sp_getLastProduct_Result">
+          <Property Type="String" Name="ID_PRO" Nullable="false" MaxLength="11" />
+          <Property Type="String" Name="NAMEPRO" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="ID_CATE" Nullable="false" MaxLength="11" />
+          <Property Type="String" Name="QUANTITY" Nullable="false" MaxLength="11" />
+          <Property Type="String" Name="UNIT" Nullable="false" MaxLength="5" />
+          <Property Type="String" Name="PICTURE" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="UNITPRICEPRO" Nullable="false" MaxLength="11" />
+          <Property Type="String" Name="STATUS_PRO" Nullable="true" MaxLength="100" />
+        </ComplexType>
+        <ComplexType Name="sp_TimKiem_Result">
+          <Property Type="String" Name="ID_PRO" Nullable="false" MaxLength="11" />
+          <Property Type="String" Name="NAMEPRO" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="ID_CATE" Nullable="false" MaxLength="11" />
+          <Property Type="String" Name="QUANTITY" Nullable="false" MaxLength="11" />
+          <Property Type="String" Name="UNIT" Nullable="false" MaxLength="5" />
+          <Property Type="String" Name="PICTURE" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="UNITPRICEPRO" Nullable="false" MaxLength="11" />
+          <Property Type="String" Name="STATUS_PRO" Nullable="true" MaxLength="100" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -527,6 +586,37 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="sp_EditEMP" FunctionName="QLBANHANGPIZZAModel.Store.sp_EditEMP" />
+          <FunctionImportMapping FunctionImportName="sp_getLastProduct" FunctionName="QLBANHANGPIZZAModel.Store.sp_getLastProduct">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="QLBANHANGPIZZAModel.sp_getLastProduct_Result">
+                <ScalarProperty Name="ID_PRO" ColumnName="ID_PRO" />
+                <ScalarProperty Name="NAMEPRO" ColumnName="NAMEPRO" />
+                <ScalarProperty Name="ID_CATE" ColumnName="ID_CATE" />
+                <ScalarProperty Name="QUANTITY" ColumnName="QUANTITY" />
+                <ScalarProperty Name="UNIT" ColumnName="UNIT" />
+                <ScalarProperty Name="PICTURE" ColumnName="PICTURE" />
+                <ScalarProperty Name="UNITPRICEPRO" ColumnName="UNITPRICEPRO" />
+                <ScalarProperty Name="STATUS_PRO" ColumnName="STATUS_PRO" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_CheckIDPro_Product" FunctionName="QLBANHANGPIZZAModel.Store.sp_CheckIDPro_Product" />
+          <FunctionImportMapping FunctionImportName="sp_CheckNamePro_Product" FunctionName="QLBANHANGPIZZAModel.Store.sp_CheckNamePro_Product" />
+          <FunctionImportMapping FunctionImportName="sp_TimKiem" FunctionName="QLBANHANGPIZZAModel.Store.sp_TimKiem">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="QLBANHANGPIZZAModel.sp_TimKiem_Result">
+                <ScalarProperty Name="ID_PRO" ColumnName="ID_PRO" />
+                <ScalarProperty Name="NAMEPRO" ColumnName="NAMEPRO" />
+                <ScalarProperty Name="ID_CATE" ColumnName="ID_CATE" />
+                <ScalarProperty Name="QUANTITY" ColumnName="QUANTITY" />
+                <ScalarProperty Name="UNIT" ColumnName="UNIT" />
+                <ScalarProperty Name="PICTURE" ColumnName="PICTURE" />
+                <ScalarProperty Name="UNITPRICEPRO" ColumnName="UNITPRICEPRO" />
+                <ScalarProperty Name="STATUS_PRO" ColumnName="STATUS_PRO" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

@@ -31,13 +31,13 @@ namespace QuanLyNhaHangPizza_GUI
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f_ManageProduct_Ad));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtNAMEPRO = new System.Windows.Forms.TextBox();
+            this.cb_Unit = new System.Windows.Forms.ComboBox();
             this.numQuantity_Pro = new System.Windows.Forms.NumericUpDown();
             this.cbCate_ID = new System.Windows.Forms.ComboBox();
-            this.txtPro_Name = new System.Windows.Forms.TextBox();
             this.txtStatus_Pro = new System.Windows.Forms.TextBox();
             this.txtPic_Name = new System.Windows.Forms.TextBox();
             this.txtUnitPrice = new System.Windows.Forms.TextBox();
-            this.txtUnit_Pro = new System.Windows.Forms.TextBox();
             this.txtPro_ID = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -49,6 +49,14 @@ namespace QuanLyNhaHangPizza_GUI
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.gridProduct = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnDel = new System.Windows.Forms.Button();
@@ -63,13 +71,13 @@ namespace QuanLyNhaHangPizza_GUI
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtNAMEPRO);
+            this.groupBox1.Controls.Add(this.cb_Unit);
             this.groupBox1.Controls.Add(this.numQuantity_Pro);
             this.groupBox1.Controls.Add(this.cbCate_ID);
-            this.groupBox1.Controls.Add(this.txtPro_Name);
             this.groupBox1.Controls.Add(this.txtStatus_Pro);
             this.groupBox1.Controls.Add(this.txtPic_Name);
             this.groupBox1.Controls.Add(this.txtUnitPrice);
-            this.groupBox1.Controls.Add(this.txtUnit_Pro);
             this.groupBox1.Controls.Add(this.txtPro_ID);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label7);
@@ -89,6 +97,27 @@ namespace QuanLyNhaHangPizza_GUI
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "THÔNG TIN SẢN PHẨM";
             // 
+            // txtNAMEPRO
+            // 
+            this.txtNAMEPRO.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNAMEPRO.Location = new System.Drawing.Point(213, 94);
+            this.txtNAMEPRO.Name = "txtNAMEPRO";
+            this.txtNAMEPRO.Size = new System.Drawing.Size(251, 30);
+            this.txtNAMEPRO.TabIndex = 5;
+            // 
+            // cb_Unit
+            // 
+            this.cb_Unit.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cb_Unit.FormattingEnabled = true;
+            this.cb_Unit.Items.AddRange(new object[] {
+            "Cái",
+            "Ly ",
+            "Chai"});
+            this.cb_Unit.Location = new System.Drawing.Point(831, 43);
+            this.cb_Unit.Name = "cb_Unit";
+            this.cb_Unit.Size = new System.Drawing.Size(251, 31);
+            this.cb_Unit.TabIndex = 4;
+            // 
             // numQuantity_Pro
             // 
             this.numQuantity_Pro.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -105,14 +134,6 @@ namespace QuanLyNhaHangPizza_GUI
             this.cbCate_ID.Name = "cbCate_ID";
             this.cbCate_ID.Size = new System.Drawing.Size(251, 31);
             this.cbCate_ID.TabIndex = 2;
-            // 
-            // txtPro_Name
-            // 
-            this.txtPro_Name.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPro_Name.Location = new System.Drawing.Point(213, 91);
-            this.txtPro_Name.Name = "txtPro_Name";
-            this.txtPro_Name.Size = new System.Drawing.Size(251, 30);
-            this.txtPro_Name.TabIndex = 1;
             // 
             // txtStatus_Pro
             // 
@@ -138,21 +159,15 @@ namespace QuanLyNhaHangPizza_GUI
             this.txtUnitPrice.Size = new System.Drawing.Size(251, 30);
             this.txtUnitPrice.TabIndex = 1;
             // 
-            // txtUnit_Pro
-            // 
-            this.txtUnit_Pro.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUnit_Pro.Location = new System.Drawing.Point(831, 43);
-            this.txtUnit_Pro.Name = "txtUnit_Pro";
-            this.txtUnit_Pro.Size = new System.Drawing.Size(251, 30);
-            this.txtUnit_Pro.TabIndex = 1;
-            // 
             // txtPro_ID
             // 
+            this.txtPro_ID.Enabled = false;
             this.txtPro_ID.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPro_ID.Location = new System.Drawing.Point(213, 39);
             this.txtPro_ID.Name = "txtPro_ID";
             this.txtPro_ID.Size = new System.Drawing.Size(251, 30);
             this.txtPro_ID.TabIndex = 1;
+            this.txtPro_ID.TextChanged += new System.EventHandler(this.txtPro_ID_TextChanged);
             // 
             // label8
             // 
@@ -253,6 +268,15 @@ namespace QuanLyNhaHangPizza_GUI
             // 
             this.gridProduct.BackgroundColor = System.Drawing.Color.White;
             this.gridProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridProduct.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4,
+            this.Column5,
+            this.Column6,
+            this.Column7,
+            this.Column8});
             this.gridProduct.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridProduct.Location = new System.Drawing.Point(3, 23);
             this.gridProduct.Name = "gridProduct";
@@ -260,6 +284,71 @@ namespace QuanLyNhaHangPizza_GUI
             this.gridProduct.RowTemplate.Height = 24;
             this.gridProduct.Size = new System.Drawing.Size(1084, 242);
             this.gridProduct.TabIndex = 0;
+            this.gridProduct.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridProduct_CellClick);
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "ID_PRO";
+            this.Column1.HeaderText = "Mã sản phẩm";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.Width = 125;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "NAMEPRO";
+            this.Column2.HeaderText = "Tên sản phẩm";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 125;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "NAME_CATE";
+            this.Column3.HeaderText = "Phân loại";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            this.Column3.Width = 125;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "QUANTITY";
+            this.Column4.HeaderText = "Số lượng";
+            this.Column4.MinimumWidth = 6;
+            this.Column4.Name = "Column4";
+            this.Column4.Width = 70;
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "UNIT";
+            this.Column5.HeaderText = "Đơn vị tính";
+            this.Column5.MinimumWidth = 6;
+            this.Column5.Name = "Column5";
+            this.Column5.Width = 70;
+            // 
+            // Column6
+            // 
+            this.Column6.DataPropertyName = "UNITPRICEPRO";
+            this.Column6.HeaderText = "Đơn giá";
+            this.Column6.MinimumWidth = 6;
+            this.Column6.Name = "Column6";
+            this.Column6.Width = 125;
+            // 
+            // Column7
+            // 
+            this.Column7.DataPropertyName = "PICTURE";
+            this.Column7.HeaderText = "Tên ảnh";
+            this.Column7.MinimumWidth = 6;
+            this.Column7.Name = "Column7";
+            this.Column7.Width = 125;
+            // 
+            // Column8
+            // 
+            this.Column8.DataPropertyName = "STATUS_PRO";
+            this.Column8.HeaderText = "Tình trạng sản phẩm";
+            this.Column8.MinimumWidth = 6;
+            this.Column8.Name = "Column8";
+            this.Column8.Width = 125;
             // 
             // btnAdd
             // 
@@ -275,6 +364,7 @@ namespace QuanLyNhaHangPizza_GUI
             this.btnAdd.TabIndex = 2;
             this.btnAdd.Text = "Thêm";
             this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click_1);
             // 
             // btnEdit
             // 
@@ -290,6 +380,7 @@ namespace QuanLyNhaHangPizza_GUI
             this.btnEdit.TabIndex = 2;
             this.btnEdit.Text = "Sửa";
             this.btnEdit.UseVisualStyleBackColor = false;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnDel
             // 
@@ -305,6 +396,7 @@ namespace QuanLyNhaHangPizza_GUI
             this.btnDel.TabIndex = 2;
             this.btnDel.Text = "Xóa";
             this.btnDel.UseVisualStyleBackColor = false;
+            this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
             // 
             // btnExit
             // 
@@ -330,6 +422,7 @@ namespace QuanLyNhaHangPizza_GUI
             this.txtSearch_ProName.Name = "txtSearch_ProName";
             this.txtSearch_ProName.Size = new System.Drawing.Size(369, 42);
             this.txtSearch_ProName.TabIndex = 3;
+            this.txtSearch_ProName.TextChanged += new System.EventHandler(this.txtSearch_ProName_TextChanged);
             // 
             // label9
             // 
@@ -362,6 +455,7 @@ namespace QuanLyNhaHangPizza_GUI
             this.Name = "f_ManageProduct_Ad";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "QUẢN LÝ SẢN PHẨM";
+            this.Load += new System.EventHandler(this.f_ManageProduct_Ad_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numQuantity_Pro)).EndInit();
@@ -377,7 +471,6 @@ namespace QuanLyNhaHangPizza_GUI
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.NumericUpDown numQuantity_Pro;
         private System.Windows.Forms.ComboBox cbCate_ID;
-        private System.Windows.Forms.TextBox txtPro_Name;
         private System.Windows.Forms.TextBox txtPro_ID;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
@@ -390,7 +483,6 @@ namespace QuanLyNhaHangPizza_GUI
         private System.Windows.Forms.TextBox txtStatus_Pro;
         private System.Windows.Forms.TextBox txtPic_Name;
         private System.Windows.Forms.TextBox txtUnitPrice;
-        private System.Windows.Forms.TextBox txtUnit_Pro;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridView gridProduct;
         private System.Windows.Forms.Button btnAdd;
@@ -399,5 +491,15 @@ namespace QuanLyNhaHangPizza_GUI
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.TextBox txtSearch_ProName;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.ComboBox cb_Unit;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
+        private System.Windows.Forms.TextBox txtNAMEPRO;
     }
 }

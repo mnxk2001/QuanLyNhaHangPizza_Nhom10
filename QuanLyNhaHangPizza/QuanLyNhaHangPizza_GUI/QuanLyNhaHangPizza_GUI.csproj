@@ -65,6 +65,7 @@
       <DependentUpon>RestaurantPizza.tt</DependentUpon>
     </Compile>
     <Compile Include="BUS_Pizza\BUS_Customer.cs" />
+    <Compile Include="BUS_Pizza\BUS_Product.cs" />
     <Compile Include="CATEGORy.cs">
       <DependentUpon>RestaurantPizza.tt</DependentUpon>
     </Compile>
@@ -72,6 +73,7 @@
       <DependentUpon>RestaurantPizza.tt</DependentUpon>
     </Compile>
     <Compile Include="DAO_Pizza\DAO_Customer.cs" />
+    <Compile Include="DAO_Pizza\DAO_Product.cs" />
     <Compile Include="EMPLOYEE.cs">
       <DependentUpon>RestaurantPizza.tt</DependentUpon>
     </Compile>
@@ -169,6 +171,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RestaurantPizza.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="sp_getLastProduct_Result.cs">
+      <DependentUpon>RestaurantPizza.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_TimKiem_Result.cs">
+      <DependentUpon>RestaurantPizza.tt</DependentUpon>
     </Compile>
     <EmbeddedResource Include="f_ChooseCus.resx">
       <DependentUpon>f_ChooseCus.cs</DependentUpon>

@@ -16,8 +16,8 @@
     <Property Name="ID_Cus" Type="char" MaxLength="11" Nullable="false" />
     <Property Name="ID_Emp" Type="char" MaxLength="11" Nullable="false" />
     <Property Name="DateFounded" Type="date" Nullable="false" />
-    <Property Name="TotalMoney" Type="char" MaxLength="11" Nullable="false" />
-    <Property Name="BillNotes" Type="ntext" Nullable="false" />
+    <Property Name="TotalMoney" Type="char" MaxLength="11" />
+    <Property Name="BillNotes" Type="ntext" />
   </EntityType>
   <EntityType Name="BILLDETAIL">
     <Key>
@@ -166,6 +166,26 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Function Name="sp_CheckIDPro_Product" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="namePro" Type="char" Mode="In" />
+  </Function>
+  <Function Name="sp_CheckNamePro_Product" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="namePro" Type="char" Mode="In" />
+  </Function>
+  <Function Name="sp_EditEMP" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID_PRO" Type="char" Mode="In" />
+    <Parameter Name="NAMEPRO" Type="nvarchar" Mode="In" />
+    <Parameter Name="ID_CATE" Type="char" Mode="In" />
+    <Parameter Name="QUANTITY" Type="char" Mode="In" />
+    <Parameter Name="UNIT" Type="nvarchar" Mode="In" />
+    <Parameter Name="PICTURE" Type="varchar" Mode="In" />
+    <Parameter Name="UNITPRICEPRO" Type="char" Mode="In" />
+    <Parameter Name="STATUS_PRO" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_getLastProduct" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_TimKiem" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="chuoi" Type="nvarchar" Mode="In" />
+  </Function>
   <EntityContainer Name="QLBANHANGPIZZAModelStoreContainer">
     <EntitySet Name="ACCOUNT" EntityType="Self.ACCOUNT" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="BILL" EntityType="Self.BILL" Schema="dbo" store:Type="Tables" />

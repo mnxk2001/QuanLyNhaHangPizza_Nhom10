@@ -12,6 +12,8 @@ namespace QuanLyNhaHangPizza_GUI
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Entity.Core.Objects;
+    using System.Linq;
     
     public partial class QLBANHANGPIZZAEntities : DbContext
     {
@@ -33,5 +35,74 @@ namespace QuanLyNhaHangPizza_GUI
         public virtual DbSet<EMPLOYEE> EMPLOYEEs { get; set; }
         public virtual DbSet<EMPLOYEE_WORK> EMPLOYEE_WORK { get; set; }
         public virtual DbSet<PRODUCT> PRODUCTS { get; set; }
+    
+        public virtual int sp_EditEMP(string iD_PRO, string nAMEPRO, string iD_CATE, string qUANTITY, string uNIT, string pICTURE, string uNITPRICEPRO, string sTATUS_PRO)
+        {
+            var iD_PROParameter = iD_PRO != null ?
+                new ObjectParameter("ID_PRO", iD_PRO) :
+                new ObjectParameter("ID_PRO", typeof(string));
+    
+            var nAMEPROParameter = nAMEPRO != null ?
+                new ObjectParameter("NAMEPRO", nAMEPRO) :
+                new ObjectParameter("NAMEPRO", typeof(string));
+    
+            var iD_CATEParameter = iD_CATE != null ?
+                new ObjectParameter("ID_CATE", iD_CATE) :
+                new ObjectParameter("ID_CATE", typeof(string));
+    
+            var qUANTITYParameter = qUANTITY != null ?
+                new ObjectParameter("QUANTITY", qUANTITY) :
+                new ObjectParameter("QUANTITY", typeof(string));
+    
+            var uNITParameter = uNIT != null ?
+                new ObjectParameter("UNIT", uNIT) :
+                new ObjectParameter("UNIT", typeof(string));
+    
+            var pICTUREParameter = pICTURE != null ?
+                new ObjectParameter("PICTURE", pICTURE) :
+                new ObjectParameter("PICTURE", typeof(string));
+    
+            var uNITPRICEPROParameter = uNITPRICEPRO != null ?
+                new ObjectParameter("UNITPRICEPRO", uNITPRICEPRO) :
+                new ObjectParameter("UNITPRICEPRO", typeof(string));
+    
+            var sTATUS_PROParameter = sTATUS_PRO != null ?
+                new ObjectParameter("STATUS_PRO", sTATUS_PRO) :
+                new ObjectParameter("STATUS_PRO", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_EditEMP", iD_PROParameter, nAMEPROParameter, iD_CATEParameter, qUANTITYParameter, uNITParameter, pICTUREParameter, uNITPRICEPROParameter, sTATUS_PROParameter);
+        }
+    
+        public virtual ObjectResult<sp_getLastProduct_Result> sp_getLastProduct()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_getLastProduct_Result>("sp_getLastProduct");
+        }
+    
+        public virtual ObjectResult<Nullable<int>> sp_CheckIDPro_Product(string namePro)
+        {
+            var nameProParameter = namePro != null ?
+                new ObjectParameter("namePro", namePro) :
+                new ObjectParameter("namePro", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("sp_CheckIDPro_Product", nameProParameter);
+        }
+    
+        public virtual ObjectResult<Nullable<int>> sp_CheckNamePro_Product(string namePro)
+        {
+            var nameProParameter = namePro != null ?
+                new ObjectParameter("namePro", namePro) :
+                new ObjectParameter("namePro", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("sp_CheckNamePro_Product", nameProParameter);
+        }
+    
+        public virtual ObjectResult<sp_TimKiem_Result> sp_TimKiem(string chuoi)
+        {
+            var chuoiParameter = chuoi != null ?
+                new ObjectParameter("chuoi", chuoi) :
+                new ObjectParameter("chuoi", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_TimKiem_Result>("sp_TimKiem", chuoiParameter);
+        }
     }
 }

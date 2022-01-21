@@ -90,5 +90,36 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_EditEMP" FunctionName="QLBANHANGPIZZAModel.Store.sp_EditEMP" />
+    <FunctionImportMapping FunctionImportName="sp_getLastProduct" FunctionName="QLBANHANGPIZZAModel.Store.sp_getLastProduct">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QLBANHANGPIZZAModel.sp_getLastProduct_Result">
+          <ScalarProperty Name="ID_PRO" ColumnName="ID_PRO" />
+          <ScalarProperty Name="NAMEPRO" ColumnName="NAMEPRO" />
+          <ScalarProperty Name="ID_CATE" ColumnName="ID_CATE" />
+          <ScalarProperty Name="QUANTITY" ColumnName="QUANTITY" />
+          <ScalarProperty Name="UNIT" ColumnName="UNIT" />
+          <ScalarProperty Name="PICTURE" ColumnName="PICTURE" />
+          <ScalarProperty Name="UNITPRICEPRO" ColumnName="UNITPRICEPRO" />
+          <ScalarProperty Name="STATUS_PRO" ColumnName="STATUS_PRO" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_CheckIDPro_Product" FunctionName="QLBANHANGPIZZAModel.Store.sp_CheckIDPro_Product" />
+    <FunctionImportMapping FunctionImportName="sp_CheckNamePro_Product" FunctionName="QLBANHANGPIZZAModel.Store.sp_CheckNamePro_Product" />
+    <FunctionImportMapping FunctionImportName="sp_TimKiem" FunctionName="QLBANHANGPIZZAModel.Store.sp_TimKiem">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QLBANHANGPIZZAModel.sp_TimKiem_Result">
+          <ScalarProperty Name="ID_PRO" ColumnName="ID_PRO" />
+          <ScalarProperty Name="NAMEPRO" ColumnName="NAMEPRO" />
+          <ScalarProperty Name="ID_CATE" ColumnName="ID_CATE" />
+          <ScalarProperty Name="QUANTITY" ColumnName="QUANTITY" />
+          <ScalarProperty Name="UNIT" ColumnName="UNIT" />
+          <ScalarProperty Name="PICTURE" ColumnName="PICTURE" />
+          <ScalarProperty Name="UNITPRICEPRO" ColumnName="UNITPRICEPRO" />
+          <ScalarProperty Name="STATUS_PRO" ColumnName="STATUS_PRO" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>
