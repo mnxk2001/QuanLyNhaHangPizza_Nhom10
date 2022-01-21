@@ -12,6 +12,8 @@ namespace QuanLyNhaHangPizza_GUI
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Entity.Core.Objects;
+    using System.Linq;
     
     public partial class QLBANHANGPIZZAEntities : DbContext
     {
@@ -33,5 +35,40 @@ namespace QuanLyNhaHangPizza_GUI
         public virtual DbSet<EMPLOYEE> EMPLOYEEs { get; set; }
         public virtual DbSet<EMPLOYEE_WORK> EMPLOYEE_WORK { get; set; }
         public virtual DbSet<PRODUCT> PRODUCTS { get; set; }
+    
+        public virtual int SP_UPDATEEMPLOYEE(string iD_E, string name_E, string phone, string address, string positition)
+        {
+            var iD_EParameter = iD_E != null ?
+                new ObjectParameter("ID_E", iD_E) :
+                new ObjectParameter("ID_E", typeof(string));
+    
+            var name_EParameter = name_E != null ?
+                new ObjectParameter("Name_E", name_E) :
+                new ObjectParameter("Name_E", typeof(string));
+    
+            var phoneParameter = phone != null ?
+                new ObjectParameter("Phone", phone) :
+                new ObjectParameter("Phone", typeof(string));
+    
+            var addressParameter = address != null ?
+                new ObjectParameter("Address", address) :
+                new ObjectParameter("Address", typeof(string));
+    
+            var posititionParameter = positition != null ?
+                new ObjectParameter("Positition", positition) :
+                new ObjectParameter("Positition", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_UPDATEEMPLOYEE", iD_EParameter, name_EParameter, phoneParameter, addressParameter, posititionParameter);
+        }
+    
+        public virtual ObjectResult<Nullable<int>> sp_getQuantityEmp()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("sp_getQuantityEmp");
+        }
+    
+        public virtual ObjectResult<Nullable<int>> sp_getQuantityEmp1()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("sp_getQuantityEmp1");
+        }
     }
 }

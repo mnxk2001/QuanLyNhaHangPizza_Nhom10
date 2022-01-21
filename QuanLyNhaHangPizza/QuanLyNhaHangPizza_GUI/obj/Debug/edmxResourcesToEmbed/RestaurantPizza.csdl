@@ -17,8 +17,8 @@
     <Property Name="ID_Cus" Type="String" MaxLength="11" FixedLength="true" Unicode="false" Nullable="false" />
     <Property Name="ID_Emp" Type="String" MaxLength="11" FixedLength="true" Unicode="false" Nullable="false" />
     <Property Name="DateFounded" Type="DateTime" Nullable="false" Precision="0" />
-    <Property Name="TotalMoney" Type="String" MaxLength="11" FixedLength="true" Unicode="false" Nullable="false" />
-    <Property Name="BillNotes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TotalMoney" Type="String" MaxLength="11" FixedLength="true" Unicode="false" />
+    <Property Name="BillNotes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="CUSTOMER" Relationship="Self.FK_Bill_Cus" FromRole="BILL" ToRole="CUSTOMER" />
     <NavigationProperty Name="EMPLOYEE" Relationship="Self.FK_Bill_Emp" FromRole="BILL" ToRole="EMPLOYEE" />
     <NavigationProperty Name="BILLDETAILs" Relationship="Self.FK_BILLDETAIL_BILL" FromRole="BILL" ToRole="BILLDETAIL" />
@@ -217,5 +217,14 @@
       <End Role="EMPLOYEE" EntitySet="EMPLOYEEs" />
       <End Role="EMPLOYEE_WORK" EntitySet="EMPLOYEE_WORK" />
     </AssociationSet>
+    <FunctionImport Name="SP_UPDATEEMPLOYEE">
+      <Parameter Name="ID_E" Mode="In" Type="String" />
+      <Parameter Name="Name_E" Mode="In" Type="String" />
+      <Parameter Name="Phone" Mode="In" Type="String" />
+      <Parameter Name="Address" Mode="In" Type="String" />
+      <Parameter Name="Positition" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_getQuantityEmp" ReturnType="Collection(Int32)" />
+    <FunctionImport Name="sp_getQuantityEmp1" ReturnType="Collection(Int32)" />
   </EntityContainer>
 </Schema>

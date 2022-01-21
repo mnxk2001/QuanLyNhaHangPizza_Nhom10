@@ -90,5 +90,8 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="SP_UPDATEEMPLOYEE" FunctionName="QLBANHANGPIZZAModel.Store.SP_UPDATEEMPLOYEE" />
+    <FunctionImportMapping FunctionImportName="sp_getQuantityEmp" FunctionName="QLBANHANGPIZZAModel.Store.sp_getQuantityEmp" />
+    <FunctionImportMapping FunctionImportName="sp_getQuantityEmp1" FunctionName="QLBANHANGPIZZAModel.Store.sp_getQuantityEmp1" />
   </EntityContainerMapping>
 </Mapping>

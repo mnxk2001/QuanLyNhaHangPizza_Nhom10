@@ -16,8 +16,8 @@
     <Property Name="ID_Cus" Type="char" MaxLength="11" Nullable="false" />
     <Property Name="ID_Emp" Type="char" MaxLength="11" Nullable="false" />
     <Property Name="DateFounded" Type="date" Nullable="false" />
-    <Property Name="TotalMoney" Type="char" MaxLength="11" Nullable="false" />
-    <Property Name="BillNotes" Type="ntext" Nullable="false" />
+    <Property Name="TotalMoney" Type="char" MaxLength="11" />
+    <Property Name="BillNotes" Type="ntext" />
   </EntityType>
   <EntityType Name="BILLDETAIL">
     <Key>
@@ -166,6 +166,15 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Function Name="sp_getQuantityEmp" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_getQuantityEmp1" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_UPDATEEMPLOYEE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID_E" Type="char" Mode="In" />
+    <Parameter Name="Name_E" Type="nvarchar" Mode="In" />
+    <Parameter Name="Phone" Type="char" Mode="In" />
+    <Parameter Name="Address" Type="nvarchar" Mode="In" />
+    <Parameter Name="Positition" Type="nvarchar" Mode="In" />
+  </Function>
   <EntityContainer Name="QLBANHANGPIZZAModelStoreContainer">
     <EntitySet Name="ACCOUNT" EntityType="Self.ACCOUNT" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="BILL" EntityType="Self.BILL" Schema="dbo" store:Type="Tables" />
