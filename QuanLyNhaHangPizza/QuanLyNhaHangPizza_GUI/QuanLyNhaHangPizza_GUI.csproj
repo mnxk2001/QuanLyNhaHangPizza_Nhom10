@@ -65,6 +65,8 @@
       <DependentUpon>RestaurantPizza.tt</DependentUpon>
     </Compile>
     <Compile Include="BUS_Pizza\BUS_Customer.cs" />
+    <Compile Include="BUS_Pizza\BUS_Login.cs" />
+    <Compile Include="BUS_Pizza\BUS_LoginAd.cs" />
     <Compile Include="CATEGORy.cs">
       <DependentUpon>RestaurantPizza.tt</DependentUpon>
     </Compile>
@@ -72,6 +74,8 @@
       <DependentUpon>RestaurantPizza.tt</DependentUpon>
     </Compile>
     <Compile Include="DAO_Pizza\DAO_Customer.cs" />
+    <Compile Include="DAO_Pizza\DAO_Login.cs" />
+    <Compile Include="DAO_Pizza\DAO_LoginAd.cs" />
     <Compile Include="EMPLOYEE.cs">
       <DependentUpon>RestaurantPizza.tt</DependentUpon>
     </Compile>
